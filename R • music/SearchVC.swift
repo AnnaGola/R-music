@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class SearchVC: UITableViewController {
     
@@ -25,6 +26,7 @@ class SearchVC: UITableViewController {
     private func setupSearchBar() {
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.searchBar.delegate = self
     }
     
     
@@ -39,5 +41,23 @@ class SearchVC: UITableViewController {
         cell.textLabel?.numberOfLines = 2
         cell.imageView?.image = #imageLiteral(resourceName: "library")
         return cell
+    }
+}
+
+extension SearchVC: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        let url = "https://itunes.apple.com/search?term=\(searchText)"
+        
+        AF.request(url).responseData { data in
+            if let error = data.error {
+                print("errrrorooroororo \(error)")
+                return
+            }
+            
+            guard let data = data.data else { return }
+            let someString = String(data: data, encoding: .utf8)
+            print(someString ?? "")
+        }
     }
 }
