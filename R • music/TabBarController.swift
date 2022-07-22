@@ -12,20 +12,22 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let search = SearchVC()
-        let navVC = UINavigationController(rootViewController: search)
-        navVC.tabBarItem.image = UIImage(named: "search")
-        navVC.tabBarItem.title = "Search"
-        search.navigationItem.title = "Search"
+        view.backgroundColor = .white
+        
+        viewControllers = [
+            createVC(rootVC: SearchVC(), image: #imageLiteral(resourceName: "search") , title: "Search"),
+            createVC(rootVC: PlaylistVC(), image: #imageLiteral(resourceName: "library"), title: "Playlist")
+        ]
+    }
+    
+    
+    
+    func createVC(rootVC: UIViewController, image: UIImage, title: String) -> UIViewController {
+        let navVC = UINavigationController(rootViewController: rootVC)
+        navVC.tabBarItem.image = image
+        navVC.tabBarItem.title = title
+        rootVC.navigationItem.title = title
         navVC.navigationBar.prefersLargeTitles = true
-        
-        let playlist = PlaylistVC()
-        let navVC2 = UINavigationController(rootViewController: playlist)
-        navVC2.tabBarItem.image = UIImage(named: "library")
-        navVC2.tabBarItem.title = "Playlist"
-        playlist.navigationItem.title = "Playlist"
-        navVC2.navigationBar.prefersLargeTitles = true
-        
-        viewControllers = [navVC, navVC2]
+        return navVC
     }
 }

@@ -12,6 +12,6 @@ class SearchVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .gray
+        view.backgroundColor = .white
     }
 }
