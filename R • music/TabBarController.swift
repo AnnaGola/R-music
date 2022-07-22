@@ -14,6 +14,8 @@ class TabBarController: UITabBarController {
         
         view.backgroundColor = .white
         
+        tabBar.tintColor = #colorLiteral(red: 0.8425114751, green: 0.6422668695, blue: 0.550950408, alpha: 1)
+        
         viewControllers = [
             createVC(rootVC: SearchVC(), image: #imageLiteral(resourceName: "search") , title: "Search"),
             createVC(rootVC: PlaylistVC(), image: #imageLiteral(resourceName: "library"), title: "Playlist")

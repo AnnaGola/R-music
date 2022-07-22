@@ -14,6 +14,7 @@
 		AF1A7ED6288B135800CDA821 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7ED5288B135800CDA821 /* TabBarController.swift */; };
 		AF1A7ED8288B169E00CDA821 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7ED7288B169E00CDA821 /* SearchVC.swift */; };
 		AF1A7EDA288B16DE00CDA821 /* PlaylistVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7ED9288B16DE00CDA821 /* PlaylistVC.swift */; };
+		AF1A7EDC288B339200CDA821 /* TackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7EDB288B339200CDA821 /* TackModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		AF1A7ED5288B135800CDA821 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		AF1A7ED7288B169E00CDA821 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		AF1A7ED9288B16DE00CDA821 /* PlaylistVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistVC.swift; sourceTree = "<group>"; };
+		AF1A7EDB288B339200CDA821 /* TackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TackModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				AF1A7EC3288B131300CDA821 /* SceneDelegate.swift */,
 				AF1A7ED5288B135800CDA821 /* TabBarController.swift */,
 				AF1A7ED7288B169E00CDA821 /* SearchVC.swift */,
+				AF1A7EDB288B339200CDA821 /* TackModel.swift */,
 				AF1A7ED9288B16DE00CDA821 /* PlaylistVC.swift */,
 				AF1A7ECA288B131B00CDA821 /* Assets.xcassets */,
 				AF1A7ECC288B131B00CDA821 /* LaunchScreen.storyboard */,
@@ -144,6 +147,7 @@
 				AF1A7EDA288B16DE00CDA821 /* PlaylistVC.swift in Sources */,
 				AF1A7ED6288B135800CDA821 /* TabBarController.swift in Sources */,
 				AF1A7EC2288B131300CDA821 /* AppDelegate.swift in Sources */,
+				AF1A7EDC288B339200CDA821 /* TackModel.swift in Sources */,
 				AF1A7EC4288B131300CDA821 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
