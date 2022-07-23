@@ -96,9 +96,9 @@
 		AF1A7EC0288B131300CDA821 /* R • music */ = {
 			isa = PBXGroup;
 			children = (
-				AF1A7ED5288B135800CDA821 /* TabBarController.swift */,
-				AF1A7EDB288B339200CDA821 /* TrackModel.swift */,
 				AF1A7EF8288C304D00CDA821 /* Delegate */,
+				AF1A7ED5288B135800CDA821 /* TabBarController.swift */,
+				AF1A7EFA288C416F00CDA821 /* Model */,
 				AF1A7EF0288BFED700CDA821 /* Services */,
 				AF1A7EE1288BFE8500CDA821 /* Search */,
 				AF1A7EF5288C2FEF00CDA821 /* Extensions */,
@@ -157,6 +157,14 @@
 				AF1A7ECF288B131B00CDA821 /* Info.plist */,
 			);
 			path = "Support files";
+			sourceTree = "<group>";
+		};
+		AF1A7EFA288C416F00CDA821 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AF1A7EDB288B339200CDA821 /* TrackModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		C977FFE407DCDCC78901B075 /* Frameworks */ = {

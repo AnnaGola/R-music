@@ -11,12 +11,16 @@ import UIKit
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return searchViewModel.cells.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = table.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "\(indexPath)"
+        
+        let cellViewModel = searchViewModel.cells[indexPath.row]
+        cell.textLabel?.text = "\(cellViewModel.trackName)\n\(cellViewModel.artistName)"
+        cell.textLabel?.numberOfLines = 2
+        cell.imageView?.image = #imageLiteral(resourceName: "library")
         return cell
     }
 }
@@ -24,6 +28,6 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 extension SearchViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        interactor?.makeRequest(request: Search.Model.Request.RequestType.some)
+        interactor?.makeRequest(request: Search.Model.Request.RequestType.getTracks(searchText: searchText))
     }
 }

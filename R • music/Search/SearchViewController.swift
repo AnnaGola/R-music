@@ -18,6 +18,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
   var interactor: SearchBusinessLogic?
   var router: (NSObjectProtocol & SearchRoutingLogic)?
   let searchController = UISearchController(searchResultsController: nil)
+  var searchViewModel = SearchViewModel.init(cells: [])
 
     @IBOutlet weak var table: UITableView!
     
@@ -40,6 +41,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     private func setupSearchBar() {
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.delegate = self
     }
     
@@ -65,8 +67,10 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
         switch viewModel {
         case .some:
             print("view controller .some")
-        case .displayTracks:
+        case .displayTracks(let searchViewModel):
             print("view controller display tracks")
+            self.searchViewModel = searchViewModel
+            table.reloadData()
         }
     }
 }
