@@ -14,8 +14,7 @@ class SearchVC: UITableViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
     
-    let songs = [Track(artistName: "Billie Eilish", trackName: "bad guy", collectionName: ""),
-                 Track(artistName: "Adele", trackName: "hello", collectionName: "")]
+    var songs = [Track]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,11 +51,12 @@ extension SearchVC: UISearchBarDelegate {
         
         timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
-            let url = "https://itunes.apple.com/search?term=\(searchText)"
+            let url = "https://itunes.apple.com/search"
+            let params = ["term": "\(searchText)", "limit": "50"]
             
-            AF.request(url).responseData { data in
+            AF.request(url, method: .get, parameters: params, encoding: URLEncoding.default, headers: nil).responseData { data in
                 if let error = data.error {
-                    print("errrroroorooror \(error)")
+                    print(error)
                     return
                 }
                 
@@ -64,12 +64,15 @@ extension SearchVC: UISearchBarDelegate {
                 
                 let decoder = JSONDecoder()
                 do {
-                    let track = try decoder.decode(TrackModel.self, from: data)
-                    print(track)
-                } catch {
-                    print(error)
+                    let tracks = try decoder.decode(TrackModel.self, from: data)
+                    self.songs = tracks.results
+                    self.tableView.reloadData()
+                } catch let jsonError {
+                    print(jsonError)
                 }
-        }
-      })
+                let someSring = String(data: data, encoding: .utf8)
+                print(someSring ?? "")
+            }
+        })
     }
 }
