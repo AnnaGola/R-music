@@ -16,13 +16,13 @@ class TabBarController: UITabBarController {
         
         tabBar.tintColor = #colorLiteral(red: 0.8425114751, green: 0.6422668695, blue: 0.550950408, alpha: 1)
         
+        let searchVC: SearchViewController = SearchViewController.loadFromStoryboard()
+        
         viewControllers = [
-            createVC(rootVC: SearchVC(), image: #imageLiteral(resourceName: "search") , title: "Search"),
+            createVC(rootVC: searchVC, image: #imageLiteral(resourceName: "search") , title: "Search"),
             createVC(rootVC: PlaylistVC(), image: #imageLiteral(resourceName: "library"), title: "Playlist")
         ]
     }
-    
-    
     
     func createVC(rootVC: UIViewController, image: UIImage, title: String) -> UIViewController {
         let navVC = UINavigationController(rootViewController: rootVC)
