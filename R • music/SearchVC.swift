@@ -10,6 +10,8 @@ import Alamofire
 
 class SearchVC: UITableViewController {
     
+    var networkService = NetworkService()
+    
     var timer: Timer?
     
     let searchController = UISearchController(searchResultsController: nil)
@@ -19,6 +21,7 @@ class SearchVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.showsVerticalScrollIndicator = false
         view.backgroundColor = .white
         setupSearchBar()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -51,27 +54,9 @@ extension SearchVC: UISearchBarDelegate {
         
         timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
-            let url = "https://itunes.apple.com/search"
-            let params = ["term": "\(searchText)", "limit": "50"]
-            
-            AF.request(url, method: .get, parameters: params, encoding: URLEncoding.default, headers: nil).responseData { data in
-                if let error = data.error {
-                    print(error)
-                    return
-                }
-                
-                guard let data = data.data else { return }
-                
-                let decoder = JSONDecoder()
-                do {
-                    let tracks = try decoder.decode(TrackModel.self, from: data)
-                    self.songs = tracks.results
-                    self.tableView.reloadData()
-                } catch let jsonError {
-                    print(jsonError)
-                }
-                let someSring = String(data: data, encoding: .utf8)
-                print(someSring ?? "")
+            self.networkService.parsJsonData(searchText: searchText) { [weak self] trackModel in
+                self?.songs = trackModel?.results ?? []
+                self?.tableView.reloadData()
             }
         })
     }
