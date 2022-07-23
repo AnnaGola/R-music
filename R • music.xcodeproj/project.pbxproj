@@ -14,7 +14,7 @@
 		AF1A7ED6288B135800CDA821 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7ED5288B135800CDA821 /* TabBarController.swift */; };
 		AF1A7ED8288B169E00CDA821 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7ED7288B169E00CDA821 /* SearchVC.swift */; };
 		AF1A7EDA288B16DE00CDA821 /* PlaylistVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7ED9288B16DE00CDA821 /* PlaylistVC.swift */; };
-		AF1A7EDC288B339200CDA821 /* TackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7EDB288B339200CDA821 /* TackModel.swift */; };
+		AF1A7EDC288B339200CDA821 /* TrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7EDB288B339200CDA821 /* TrackModel.swift */; };
 		D13D58B1B52E5160ED326786 /* Pods_R___music.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E65505FC8F857FF99CD22349 /* Pods_R___music.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,9 +29,9 @@
 		AF1A7ED5288B135800CDA821 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		AF1A7ED7288B169E00CDA821 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		AF1A7ED9288B16DE00CDA821 /* PlaylistVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistVC.swift; sourceTree = "<group>"; };
-		AF1A7EDB288B339200CDA821 /* TackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TackModel.swift; sourceTree = "<group>"; };
+		AF1A7EDB288B339200CDA821 /* TrackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackModel.swift; sourceTree = "<group>"; };
 		C1B250B1099BAB02776D404D /* Pods-R • music.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-R • music.release.xcconfig"; path = "Target Support Files/Pods-R • music/Pods-R • music.release.xcconfig"; sourceTree = "<group>"; };
-		E65505FC8F857FF99CD22349 /* Pods_R___music.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_R___music.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E65505FC8F857FF99CD22349 /* Pods_R___music.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_R___music.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +52,6 @@
 				60F7C13A45FB7E8CBF30CDFA /* Pods-R • music.debug.xcconfig */,
 				C1B250B1099BAB02776D404D /* Pods-R • music.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,7 +80,7 @@
 				AF1A7EC3288B131300CDA821 /* SceneDelegate.swift */,
 				AF1A7ED5288B135800CDA821 /* TabBarController.swift */,
 				AF1A7ED7288B169E00CDA821 /* SearchVC.swift */,
-				AF1A7EDB288B339200CDA821 /* TackModel.swift */,
+				AF1A7EDB288B339200CDA821 /* TrackModel.swift */,
 				AF1A7ED9288B16DE00CDA821 /* PlaylistVC.swift */,
 				AF1A7ECA288B131B00CDA821 /* Assets.xcassets */,
 				AF1A7ECC288B131B00CDA821 /* LaunchScreen.storyboard */,
@@ -216,7 +215,7 @@
 				AF1A7EDA288B16DE00CDA821 /* PlaylistVC.swift in Sources */,
 				AF1A7ED6288B135800CDA821 /* TabBarController.swift in Sources */,
 				AF1A7EC2288B131300CDA821 /* AppDelegate.swift in Sources */,
-				AF1A7EDC288B339200CDA821 /* TackModel.swift in Sources */,
+				AF1A7EDC288B339200CDA821 /* TrackModel.swift in Sources */,
 				AF1A7EC4288B131300CDA821 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,10 +10,12 @@ import Alamofire
 
 class SearchVC: UITableViewController {
     
+    var timer: Timer?
+    
     let searchController = UISearchController(searchResultsController: nil)
     
-    let songs = [TrackModel(trackName: "bad guy", artistName: "Billie Eilish"),
-                TrackModel(trackName: "hello", artistName: "Adele")]
+    let songs = [Track(artistName: "Billie Eilish", trackName: "bad guy", collectionName: ""),
+                 Track(artistName: "Adele", trackName: "hello", collectionName: "")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,17 +49,27 @@ class SearchVC: UITableViewController {
 extension SearchVC: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        let url = "https://itunes.apple.com/search?term=\(searchText)"
         
-        AF.request(url).responseData { data in
-            if let error = data.error {
-                print("errrrorooroororo \(error)")
-                return
-            }
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
+            let url = "https://itunes.apple.com/search?term=\(searchText)"
             
-            guard let data = data.data else { return }
-            let someString = String(data: data, encoding: .utf8)
-            print(someString ?? "")
+            AF.request(url).responseData { data in
+                if let error = data.error {
+                    print("errrroroorooror \(error)")
+                    return
+                }
+                
+                guard let data = data.data else { return }
+                
+                let decoder = JSONDecoder()
+                do {
+                    let track = try decoder.decode(TrackModel.self, from: data)
+                    print(track)
+                } catch {
+                    print(error)
+                }
         }
+      })
     }
 }
