@@ -10,21 +10,22 @@ import UIKit
 
 
 protocol SearchDisplayLogic {
-  func displayData(viewModel: Search.Model.ViewModel.ViewModelData)
+    func displayData(viewModel: Search.Model.ViewModel.ViewModelData)
 }
 
 class SearchViewController: UIViewController, SearchDisplayLogic {
-
-  var interactor: SearchBusinessLogic?
-  var router: (NSObjectProtocol & SearchRoutingLogic)?
-  let searchController = UISearchController(searchResultsController: nil)
-  var searchViewModel = SearchViewModel.init(cells: [])
-
+    
+    var interactor: SearchBusinessLogic?
+    var router: (NSObjectProtocol & SearchRoutingLogic)?
+    let searchController = UISearchController(searchResultsController: nil)
+    var searchViewModel = SearchViewModel.init(cells: [])
+    var timer: Timer?
+    
     @IBOutlet weak var table: UITableView!
     
     
-  // MARK: Setup
-  
+    // MARK: Setup
+    
     private func setup() {
         let viewController = self
         let interactor = SearchInteractor()
@@ -57,6 +58,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        table.showsVerticalScrollIndicator = false
         setupSearchBar()
         setupTableView()
         setup()

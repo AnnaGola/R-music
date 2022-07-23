@@ -28,6 +28,10 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 extension SearchViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        interactor?.makeRequest(request: Search.Model.Request.RequestType.getTracks(searchText: searchText))
+        
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { _ in
+            self.interactor?.makeRequest(request: Search.Model.Request.RequestType.getTracks(searchText: searchText))
+        })
     }
 }
