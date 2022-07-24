@@ -8,7 +8,6 @@
 import UIKit
 import SDWebImage
 
-
 class TrackCell: UITableViewCell {
     
     static let reuseTrackCellID = "TrackCell"

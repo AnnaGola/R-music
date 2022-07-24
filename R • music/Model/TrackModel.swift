@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 struct TrackModel: Decodable {
     var resultCount: Int
     var results: [Track]

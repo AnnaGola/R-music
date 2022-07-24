@@ -66,10 +66,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     func displayData(viewModel: Search.Model.ViewModel.ViewModelData) {
         
         switch viewModel {
-        case .some:
-            print("view controller .some")
         case .displayTracks(let searchViewModel):
-            print("view controller display tracks")
             self.searchViewModel = searchViewModel
             table.reloadData()
         }

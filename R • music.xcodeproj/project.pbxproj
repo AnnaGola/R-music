@@ -103,7 +103,7 @@
 				AF1A7EF8288C304D00CDA821 /* Delegate */,
 				AF1A7EFA288C416F00CDA821 /* Model */,
 				AF1A7EF0288BFED700CDA821 /* Services */,
-				AF1A7F06288D7E4900CDA821 /* View */,
+				AF1A7F06288D7E4900CDA821 /* Views */,
 				AF1A7F03288D7DF500CDA821 /* Protocols */,
 				AF1A7EF5288C2FEF00CDA821 /* Extensions */,
 				AF1A7EF9288C307700CDA821 /* Support files */,
@@ -195,14 +195,14 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		AF1A7F06288D7E4900CDA821 /* View */ = {
+		AF1A7F06288D7E4900CDA821 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				AF1A7F00288D7BAB00CDA821 /* TabBar */,
 				AF1A7EE1288BFE8500CDA821 /* Search */,
 				AF1A7ED9288B16DE00CDA821 /* PlaylistVC.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		C977FFE407DCDCC78901B075 /* Frameworks */ = {
