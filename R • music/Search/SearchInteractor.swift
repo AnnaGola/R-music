@@ -31,7 +31,7 @@ class SearchInteractor: SearchBusinessLogic {
           print("interactor get tracks")
           networkService.parsJsonData(searchText: searchText) { [weak self] trackModel in
               self?.presenter?.presentData(response: Search.Model.Response.ResponseType.presentTracks(trackModel: trackModel))
-          }
       }
+    }
   }
 }

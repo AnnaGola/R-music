@@ -23,6 +23,13 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     
     @IBOutlet weak var table: UITableView!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        table.showsVerticalScrollIndicator = false
+        setupSearchBar()
+        setupTableView()
+        setup()
+    }
     
     // MARK: Setup
     
@@ -54,19 +61,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     }
     
     // MARK: Routing
-    
-    
-    
-    // MARK: View lifecycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        table.showsVerticalScrollIndicator = false
-        setupSearchBar()
-        setupTableView()
-        setup()
-    }
-    
+
     func displayData(viewModel: Search.Model.ViewModel.ViewModelData) {
         
         switch viewModel {
