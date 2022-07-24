@@ -58,6 +58,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
         
         let nib = UINib(nibName: "TrackCell", bundle: nil)
         table.register(nib, forCellReuseIdentifier: TrackCell.reuseTrackCellID)
+        table.tableFooterView = UIView()
     }
     
     // MARK: Routing

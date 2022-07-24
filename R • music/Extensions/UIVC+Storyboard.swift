@@ -1,5 +1,5 @@
 //
-//  UIVC+Stiryboard.swift
+//  UIVC+Storyboard.swift
 //  R • music
 //
 //  Created by anna on 23.07.2022.
