@@ -13,7 +13,7 @@ class NetworkService {
     func parsJsonData(searchText: String, complition: @escaping (TrackModel?) -> Void) {
         
         let url = "https://itunes.apple.com/search"
-        let params = ["term": "\(searchText)", "limit": "50", "media": "music"]
+        let params = ["term": "\(searchText)", "limit": "100", "media": "music"]
         
         AF.request(url, method: .get, parameters: params, encoding: URLEncoding.default, headers: nil).responseData { data in
             if let error = data.error {

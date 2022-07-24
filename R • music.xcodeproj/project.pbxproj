@@ -26,6 +26,7 @@
 		AF1A7EF7288C300D00CDA821 /* SearchVC+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7EF6288C300D00CDA821 /* SearchVC+.swift */; };
 		AF1A7EFD288D263200CDA821 /* TrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF1A7EFC288D263200CDA821 /* TrackCell.xib */; };
 		AF1A7EFF288D264500CDA821 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7EFE288D264500CDA821 /* TrackCell.swift */; };
+		AF1A7F05288D7E1600CDA821 /* TrackCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7F04288D7E1600CDA821 /* TrackCellProtocol.swift */; };
 		D13D58B1B52E5160ED326786 /* Pods_R___music.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E65505FC8F857FF99CD22349 /* Pods_R___music.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		AF1A7EF6288C300D00CDA821 /* SearchVC+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchVC+.swift"; sourceTree = "<group>"; };
 		AF1A7EFC288D263200CDA821 /* TrackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackCell.xib; sourceTree = "<group>"; };
 		AF1A7EFE288D264500CDA821 /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
+		AF1A7F04288D7E1600CDA821 /* TrackCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCellProtocol.swift; sourceTree = "<group>"; };
 		C1B250B1099BAB02776D404D /* Pods-R • music.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-R • music.release.xcconfig"; path = "Target Support Files/Pods-R • music/Pods-R • music.release.xcconfig"; sourceTree = "<group>"; };
 		E65505FC8F857FF99CD22349 /* Pods_R___music.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_R___music.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -99,12 +101,11 @@
 			isa = PBXGroup;
 			children = (
 				AF1A7EF8288C304D00CDA821 /* Delegate */,
-				AF1A7ED5288B135800CDA821 /* TabBarController.swift */,
 				AF1A7EFA288C416F00CDA821 /* Model */,
 				AF1A7EF0288BFED700CDA821 /* Services */,
-				AF1A7EE1288BFE8500CDA821 /* Search */,
+				AF1A7F06288D7E4900CDA821 /* View */,
+				AF1A7F03288D7DF500CDA821 /* Protocols */,
 				AF1A7EF5288C2FEF00CDA821 /* Extensions */,
-				AF1A7ED9288B16DE00CDA821 /* PlaylistVC.swift */,
 				AF1A7EF9288C307700CDA821 /* Support files */,
 			);
 			path = "R • music";
@@ -176,6 +177,32 @@
 				AF1A7EFE288D264500CDA821 /* TrackCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		AF1A7F00288D7BAB00CDA821 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				AF1A7ED5288B135800CDA821 /* TabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		AF1A7F03288D7DF500CDA821 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				AF1A7F04288D7E1600CDA821 /* TrackCellProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		AF1A7F06288D7E4900CDA821 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AF1A7F00288D7BAB00CDA821 /* TabBar */,
+				AF1A7EE1288BFE8500CDA821 /* Search */,
+				AF1A7ED9288B16DE00CDA821 /* PlaylistVC.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		C977FFE407DCDCC78901B075 /* Frameworks */ = {
@@ -311,6 +338,7 @@
 				AF1A7EED288BFEA800CDA821 /* SearchViewController.swift in Sources */,
 				AF1A7EEB288BFEA800CDA821 /* SearchRouter.swift in Sources */,
 				AF1A7EEC288BFEA800CDA821 /* SearchModels.swift in Sources */,
+				AF1A7F05288D7E1600CDA821 /* TrackCellProtocol.swift in Sources */,
 				AF1A7EC4288B131300CDA821 /* SceneDelegate.swift in Sources */,
 				AF1A7EF7288C300D00CDA821 /* SearchVC+.swift in Sources */,
 				AF1A7EF4288C0DD600CDA821 /* UIVC+Storyboard.swift in Sources */,

@@ -8,12 +8,6 @@
 import UIKit
 import SDWebImage
 
-protocol TrackCellProtocol {
-    var iconUrlString: String? { get }
-    var trackName: String { get }
-    var artistName: String { get }
-    var collectionName: String { get }
-}
 
 class TrackCell: UITableViewCell {
     
@@ -34,6 +28,7 @@ class TrackCell: UITableViewCell {
     }
     
     @IBAction func addSongTapped(_ sender: UIButton) {
+        
     }
     
     func setCell(viewModel: TrackCellProtocol) {
