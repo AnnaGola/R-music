@@ -19,12 +19,8 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cellViewModel = searchViewModel.cells[indexPath.row]
         
-        var cellColor = cell.trackImageView.backgroundColor
-        cellColor  = #colorLiteral(red: 0.8330247998, green: 0.6323849559, blue: 0.5387441516, alpha: 1)
-        cell.trackImageView.image = UIImage(named: cellViewModel.iconUrlString ?? String(describing: cellColor))
-        cell.artistNameLabel.text = cellViewModel.artistName
-        cell.albumNameLabel.text = cellViewModel.collectionName
-        cell.songNameLabel.text = cellViewModel.trackName
+        cell.trackImageView.backgroundColor = #colorLiteral(red: 0.8330247998, green: 0.6323849559, blue: 0.5387441516, alpha: 1)
+        cell.setCell(viewModel: cellViewModel)
         
         return cell
     }

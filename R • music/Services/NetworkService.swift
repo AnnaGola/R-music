@@ -27,15 +27,11 @@ class NetworkService {
             let decoder = JSONDecoder()
             do {
                 let tracks = try decoder.decode(TrackModel.self, from: data)
-//                self.songs = tracks.results
-//                self.tableView.reloadData()
                 complition(tracks)
             } catch let jsonError {
                 print(jsonError)
                 complition(nil)
             }
-//            let someSring = String(data: data, encoding: .utf8)
-//            print(someSring ?? "")
         }
     }
 }
