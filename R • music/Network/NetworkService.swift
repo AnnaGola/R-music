@@ -14,7 +14,7 @@ class NetworkService {
         
         let url = "https://itunes.apple.com/search"
         let params = ["term": "\(searchText)", "limit": "100", "media": "music"]
-        
+    
         AF.request(url, method: .get, parameters: params, encoding: URLEncoding.default).responseData { data in
             if let error = data.error {
                 print(error.localizedDescription)
