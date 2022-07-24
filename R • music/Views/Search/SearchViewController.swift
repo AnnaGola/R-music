@@ -41,7 +41,6 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
         router.viewController = viewController
     }
     
-    
     private func setupSearchBar() {
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false

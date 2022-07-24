@@ -27,6 +27,14 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 84
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cellViewModel = searchViewModel.cells[indexPath.row]
+        
+        let window = UIApplication.shared.keyWindow
+        let songPlayer = Bundle.main.loadNibNamed("SongPlayer", owner: self)?.first as! SongPlayer
+        window?.addSubview(songPlayer)
+    }
 }
 
 extension SearchViewController: UISearchBarDelegate {
