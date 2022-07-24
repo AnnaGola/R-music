@@ -39,7 +39,7 @@ struct SearchViewModel {
     struct Cell {
         var iconUrlString: String?
         var trackName: String
-        var collectionNAme: String
+        var collectionName: String
         var artistName: String
     }
     

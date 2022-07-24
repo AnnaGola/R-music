@@ -15,13 +15,22 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = table.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = table.dequeueReusableCell(withIdentifier: TrackCell.reuseTrackCellID, for: indexPath) as! TrackCell
         
         let cellViewModel = searchViewModel.cells[indexPath.row]
-        cell.textLabel?.text = "\(cellViewModel.trackName)\n\(cellViewModel.artistName)"
-        cell.textLabel?.numberOfLines = 2
-        cell.imageView?.image = #imageLiteral(resourceName: "library")
+        
+        var cellColor = cell.trackImageView.backgroundColor
+        cellColor  = #colorLiteral(red: 0.8330247998, green: 0.6323849559, blue: 0.5387441516, alpha: 1)
+        cell.trackImageView.image = UIImage(named: cellViewModel.iconUrlString ?? String(describing: cellColor))
+        cell.artistNameLabel.text = cellViewModel.artistName
+        cell.albumNameLabel.text = cellViewModel.collectionName
+        cell.songNameLabel.text = cellViewModel.trackName
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 84
     }
 }
 

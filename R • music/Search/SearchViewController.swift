@@ -48,6 +48,9 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     
     private func setupTableView() {
         table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        
+        let nib = UINib(nibName: "TrackCell", bundle: nil)
+        table.register(nib, forCellReuseIdentifier: TrackCell.reuseTrackCellID)
     }
     
     // MARK: Routing

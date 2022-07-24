@@ -25,6 +25,8 @@
 		AF1A7EF2288C0A2A00CDA821 /* SearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF1A7EF1288C0A2A00CDA821 /* SearchViewController.storyboard */; };
 		AF1A7EF4288C0DD600CDA821 /* UIVC+Stiryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7EF3288C0DD500CDA821 /* UIVC+Stiryboard.swift */; };
 		AF1A7EF7288C300D00CDA821 /* SearchVC+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7EF6288C300D00CDA821 /* SearchVC+.swift */; };
+		AF1A7EFD288D263200CDA821 /* TrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF1A7EFC288D263200CDA821 /* TrackCell.xib */; };
+		AF1A7EFF288D264500CDA821 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7EFE288D264500CDA821 /* TrackCell.swift */; };
 		D13D58B1B52E5160ED326786 /* Pods_R___music.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E65505FC8F857FF99CD22349 /* Pods_R___music.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +52,8 @@
 		AF1A7EF1288C0A2A00CDA821 /* SearchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchViewController.storyboard; sourceTree = "<group>"; };
 		AF1A7EF3288C0DD500CDA821 /* UIVC+Stiryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVC+Stiryboard.swift"; sourceTree = "<group>"; };
 		AF1A7EF6288C300D00CDA821 /* SearchVC+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchVC+.swift"; sourceTree = "<group>"; };
+		AF1A7EFC288D263200CDA821 /* TrackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackCell.xib; sourceTree = "<group>"; };
+		AF1A7EFE288D264500CDA821 /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
 		C1B250B1099BAB02776D404D /* Pods-R • music.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-R • music.release.xcconfig"; path = "Target Support Files/Pods-R • music/Pods-R • music.release.xcconfig"; sourceTree = "<group>"; };
 		E65505FC8F857FF99CD22349 /* Pods_R___music.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_R___music.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -119,6 +123,7 @@
 				AF1A7EE5288BFEA800CDA821 /* SearchModels.swift */,
 				AF1A7EE3288BFEA800CDA821 /* SearchWorker.swift */,
 				AF1A7EE4288BFEA800CDA821 /* SearchRouter.swift */,
+				AF1A7EFB288D262000CDA821 /* Cell */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -165,6 +170,15 @@
 				AF1A7EDB288B339200CDA821 /* TrackModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		AF1A7EFB288D262000CDA821 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				AF1A7EFC288D263200CDA821 /* TrackCell.xib */,
+				AF1A7EFE288D264500CDA821 /* TrackCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		C977FFE407DCDCC78901B075 /* Frameworks */ = {
@@ -238,6 +252,7 @@
 				AF1A7ECE288B131B00CDA821 /* LaunchScreen.storyboard in Resources */,
 				AF1A7ECB288B131B00CDA821 /* Assets.xcassets in Resources */,
 				AF1A7EF2288C0A2A00CDA821 /* SearchViewController.storyboard in Resources */,
+				AF1A7EFD288D263200CDA821 /* TrackCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +320,7 @@
 				AF1A7EF4288C0DD600CDA821 /* UIVC+Stiryboard.swift in Sources */,
 				AF1A7EE9288BFEA800CDA821 /* SearchPresenter.swift in Sources */,
 				AF1A7EE0288BF73400CDA821 /* NetworkService.swift in Sources */,
+				AF1A7EFF288D264500CDA821 /* TrackCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
