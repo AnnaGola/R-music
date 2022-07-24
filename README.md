@@ -6,5 +6,5 @@
 * CleanSwift архитектуру
 * Alamofire для работы с сетью
 * UserDefaults для сохранения данных
-* Вёрстку в коде, удалила storyboard
+* Вёрстку в коде/ storyboard и XIB для кастомных ячеек
 * Adobe XD для иконок 
