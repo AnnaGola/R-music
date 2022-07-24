@@ -27,6 +27,10 @@
 		AF1A7EFD288D263200CDA821 /* TrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF1A7EFC288D263200CDA821 /* TrackCell.xib */; };
 		AF1A7EFF288D264500CDA821 /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7EFE288D264500CDA821 /* TrackCell.swift */; };
 		AF1A7F05288D7E1600CDA821 /* TrackCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7F04288D7E1600CDA821 /* TrackCellProtocol.swift */; };
+		AF1A7F08288D817800CDA821 /* SearchDisplayLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7F07288D817800CDA821 /* SearchDisplayLogic.swift */; };
+		AF1A7F0B288D823000CDA821 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7F0A288D823000CDA821 /* Loader.swift */; };
+		AF1A7F0D288D87D900CDA821 /* SearchPresentationLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7F0C288D87D900CDA821 /* SearchPresentationLogic.swift */; };
+		AF1A7F0F288D881900CDA821 /* SearchBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7F0E288D881900CDA821 /* SearchBusinessLogic.swift */; };
 		D13D58B1B52E5160ED326786 /* Pods_R___music.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E65505FC8F857FF99CD22349 /* Pods_R___music.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +58,10 @@
 		AF1A7EFC288D263200CDA821 /* TrackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackCell.xib; sourceTree = "<group>"; };
 		AF1A7EFE288D264500CDA821 /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
 		AF1A7F04288D7E1600CDA821 /* TrackCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCellProtocol.swift; sourceTree = "<group>"; };
+		AF1A7F07288D817800CDA821 /* SearchDisplayLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDisplayLogic.swift; sourceTree = "<group>"; };
+		AF1A7F0A288D823000CDA821 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		AF1A7F0C288D87D900CDA821 /* SearchPresentationLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresentationLogic.swift; sourceTree = "<group>"; };
+		AF1A7F0E288D881900CDA821 /* SearchBusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBusinessLogic.swift; sourceTree = "<group>"; };
 		C1B250B1099BAB02776D404D /* Pods-R • music.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-R • music.release.xcconfig"; path = "Target Support Files/Pods-R • music/Pods-R • music.release.xcconfig"; sourceTree = "<group>"; };
 		E65505FC8F857FF99CD22349 /* Pods_R___music.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_R___music.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -102,7 +110,7 @@
 			children = (
 				AF1A7EF8288C304D00CDA821 /* Delegate */,
 				AF1A7EFA288C416F00CDA821 /* Model */,
-				AF1A7EF0288BFED700CDA821 /* Services */,
+				AF1A7EF0288BFED700CDA821 /* Network */,
 				AF1A7F06288D7E4900CDA821 /* Views */,
 				AF1A7F03288D7DF500CDA821 /* Protocols */,
 				AF1A7EF5288C2FEF00CDA821 /* Extensions */,
@@ -114,6 +122,7 @@
 		AF1A7EE1288BFE8500CDA821 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				AF1A7F09288D81E600CDA821 /* ActivityIndicator */,
 				AF1A7EF1288C0A2A00CDA821 /* SearchViewController.storyboard */,
 				AF1A7EE6288BFEA800CDA821 /* SearchViewController.swift */,
 				AF1A7EE7288BFEA800CDA821 /* SearchInteractor.swift */,
@@ -126,12 +135,12 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
-		AF1A7EF0288BFED700CDA821 /* Services */ = {
+		AF1A7EF0288BFED700CDA821 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				AF1A7EDF288BF73400CDA821 /* NetworkService.swift */,
 			);
-			path = Services;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		AF1A7EF5288C2FEF00CDA821 /* Extensions */ = {
@@ -191,6 +200,9 @@
 			isa = PBXGroup;
 			children = (
 				AF1A7F04288D7E1600CDA821 /* TrackCellProtocol.swift */,
+				AF1A7F07288D817800CDA821 /* SearchDisplayLogic.swift */,
+				AF1A7F0C288D87D900CDA821 /* SearchPresentationLogic.swift */,
+				AF1A7F0E288D881900CDA821 /* SearchBusinessLogic.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -203,6 +215,14 @@
 				AF1A7ED9288B16DE00CDA821 /* PlaylistVC.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		AF1A7F09288D81E600CDA821 /* ActivityIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				AF1A7F0A288D823000CDA821 /* Loader.swift */,
+			);
+			path = ActivityIndicator;
 			sourceTree = "<group>";
 		};
 		C977FFE407DCDCC78901B075 /* Frameworks */ = {
@@ -329,13 +349,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF1A7F0F288D881900CDA821 /* SearchBusinessLogic.swift in Sources */,
 				AF1A7EDA288B16DE00CDA821 /* PlaylistVC.swift in Sources */,
+				AF1A7F0B288D823000CDA821 /* Loader.swift in Sources */,
 				AF1A7ED6288B135800CDA821 /* TabBarController.swift in Sources */,
 				AF1A7EEE288BFEA800CDA821 /* SearchInteractor.swift in Sources */,
 				AF1A7EC2288B131300CDA821 /* AppDelegate.swift in Sources */,
 				AF1A7EDC288B339200CDA821 /* TrackModel.swift in Sources */,
 				AF1A7EEA288BFEA800CDA821 /* SearchWorker.swift in Sources */,
 				AF1A7EED288BFEA800CDA821 /* SearchViewController.swift in Sources */,
+				AF1A7F08288D817800CDA821 /* SearchDisplayLogic.swift in Sources */,
+				AF1A7F0D288D87D900CDA821 /* SearchPresentationLogic.swift in Sources */,
 				AF1A7EEB288BFEA800CDA821 /* SearchRouter.swift in Sources */,
 				AF1A7EEC288BFEA800CDA821 /* SearchModels.swift in Sources */,
 				AF1A7F05288D7E1600CDA821 /* TrackCellProtocol.swift in Sources */,

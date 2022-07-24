@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol SearchBusinessLogic {
-  func makeRequest(request: Search.Model.Request.RequestType)
-}
-
 class SearchInteractor: SearchBusinessLogic {
   
   var networkService = NetworkService()
@@ -25,6 +21,7 @@ class SearchInteractor: SearchBusinessLogic {
       
       switch request {
       case .getTracks(let searchText):
+          presenter?.presentData(response: Search.Model.Response.ResponseType.presentLoader)
           networkService.parsJsonData(searchText: searchText) { [weak self] trackModel in
               self?.presenter?.presentData(response: Search.Model.Response.ResponseType.presentTracks(trackModel: trackModel))
           }

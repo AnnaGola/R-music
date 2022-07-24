@@ -8,11 +8,6 @@
 
 import UIKit
 
-
-protocol SearchDisplayLogic {
-    func displayData(viewModel: Search.Model.ViewModel.ViewModelData)
-}
-
 class SearchViewController: UIViewController, SearchDisplayLogic {
     
     var interactor: SearchBusinessLogic?
@@ -20,6 +15,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     let searchController = UISearchController(searchResultsController: nil)
     var searchViewModel = SearchViewModel.init(cells: [])
     var timer: Timer?
+    lazy var loader = Loader()
     
     @IBOutlet weak var table: UITableView!
     
@@ -58,7 +54,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
         
         let nib = UINib(nibName: "TrackCell", bundle: nil)
         table.register(nib, forCellReuseIdentifier: TrackCell.reuseTrackCellID)
-        table.tableFooterView = UIView()
+        table.tableFooterView = loader
     }
     
     // MARK: Routing
@@ -69,6 +65,9 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
         case .displayTracks(let searchViewModel):
             self.searchViewModel = searchViewModel
             table.reloadData()
+            loader.hideActivityIndicator()
+        case .displayLoader:
+            loader.showActivityIndicator()
         }
     }
 }

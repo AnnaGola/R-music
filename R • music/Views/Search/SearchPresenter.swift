@@ -8,11 +8,6 @@
 
 import UIKit
 
-
-protocol SearchPresentationLogic {
-  func presentData(response: Search.Model.Response.ResponseType)
-}
-
 class SearchPresenter: SearchPresentationLogic {
   var viewController: SearchDisplayLogic?
   
@@ -28,6 +23,8 @@ class SearchPresenter: SearchPresentationLogic {
           
           let searchViewModel = SearchViewModel.init(cells: cells)
           viewController?.displayData(viewModel: Search.Model.ViewModel.ViewModelData.displayTracks(searchViewModel: searchViewModel))
+      case .presentLoader:
+          viewController?.displayData(viewModel: Search.Model.ViewModel.ViewModelData.displayLoader)
       }
   }
     
