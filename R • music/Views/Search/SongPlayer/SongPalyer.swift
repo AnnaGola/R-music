@@ -91,6 +91,7 @@ class SongPlayer: UIView {
         songNameLabel.text = viewModel.trackName
         artistNameLabel.text = viewModel.artistName
         playSong(previewUrl: viewModel.previewUrl)
+        observeCurrentTime()
         
         let string600 = viewModel.iconUrlString?.replacingOccurrences(of: "100x100", with: "600x600")
         guard let url = URL(string: string600 ?? "") else { return }
@@ -107,5 +108,16 @@ class SongPlayer: UIView {
         let playerItem = AVPlayerItem(url: url)
         player.replaceCurrentItem(with: playerItem)
         player.play()
+    }
+    
+    func observeCurrentTime() {
+        let time = CMTimeMake(value: 1, timescale: 2)
+        player.addPeriodicTimeObserver(forInterval: time, queue: .main) { [weak self] time in
+            self?.currentTimeLabel.text = time.createString()
+            
+            let duration = self?.player.currentItem?.duration
+            let currentDuration = ((duration ?? CMTimeMake(value: 1, timescale: 1)) - time).createString()
+            self?.allTimeLabel.text = "\(currentDuration)"
+        }
     }
 }

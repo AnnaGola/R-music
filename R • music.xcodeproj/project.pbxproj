@@ -33,6 +33,7 @@
 		AF1A7F0F288D881900CDA821 /* SearchBusinessLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7F0E288D881900CDA821 /* SearchBusinessLogic.swift */; };
 		AF1A7F12288DA49B00CDA821 /* SongPlayer.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF1A7F11288DA49A00CDA821 /* SongPlayer.xib */; };
 		AF1A7F22288DDC3D00CDA821 /* SongPalyer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7F21288DDC3D00CDA821 /* SongPalyer.swift */; };
+		AF1A7F47288EF53000CDA821 /* CMTime+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7F46288EF53000CDA821 /* CMTime+.swift */; };
 		D13D58B1B52E5160ED326786 /* Pods_R___music.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E65505FC8F857FF99CD22349 /* Pods_R___music.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		AF1A7F0E288D881900CDA821 /* SearchBusinessLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBusinessLogic.swift; sourceTree = "<group>"; };
 		AF1A7F11288DA49A00CDA821 /* SongPlayer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongPlayer.xib; sourceTree = "<group>"; };
 		AF1A7F21288DDC3D00CDA821 /* SongPalyer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongPalyer.swift; sourceTree = "<group>"; };
+		AF1A7F46288EF53000CDA821 /* CMTime+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMTime+.swift"; sourceTree = "<group>"; };
 		C1B250B1099BAB02776D404D /* Pods-R • music.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-R • music.release.xcconfig"; path = "Target Support Files/Pods-R • music/Pods-R • music.release.xcconfig"; sourceTree = "<group>"; };
 		E65505FC8F857FF99CD22349 /* Pods_R___music.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_R___music.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -153,6 +155,7 @@
 			children = (
 				AF1A7EF3288C0DD500CDA821 /* UIVC+Storyboard.swift */,
 				AF1A7EF6288C300D00CDA821 /* SearchVC+.swift */,
+				AF1A7F46288EF53000CDA821 /* CMTime+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				AF1A7EC2288B131300CDA821 /* AppDelegate.swift in Sources */,
 				AF1A7EDC288B339200CDA821 /* TrackModel.swift in Sources */,
 				AF1A7EEA288BFEA800CDA821 /* SearchWorker.swift in Sources */,
+				AF1A7F47288EF53000CDA821 /* CMTime+.swift in Sources */,
 				AF1A7EED288BFEA800CDA821 /* SearchViewController.swift in Sources */,
 				AF1A7F08288D817800CDA821 /* SearchDisplayLogic.swift in Sources */,
 				AF1A7F0D288D87D900CDA821 /* SearchPresentationLogic.swift in Sources */,
