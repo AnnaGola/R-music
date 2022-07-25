@@ -33,7 +33,11 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         
         let window = UIApplication.shared.keyWindow
         let songPlayer = Bundle.main.loadNibNamed("SongPlayer", owner: self)?.first as! SongPlayer
+        songPlayer.setPlayer(viewModel: cellViewModel)
+//        let blur = UIBlurEffect(style: .dark)
+//        view.addSubview(blur)
         window?.addSubview(songPlayer)
+        
     }
 }
 
