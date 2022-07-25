@@ -62,7 +62,10 @@ class SongPlayer: UIView {
     }
 
     @IBAction func leftScrollPressed(_ sender: UIButton) {
-        
+        let cellViewModel = delegate?.playPrevSong()
+        guard let cellSong = cellViewModel else { return }
+        self.setPlayer(viewModel: cellSong)
+
     }
 
     @IBAction func playOrPausePressed(_ sender: UIButton) {

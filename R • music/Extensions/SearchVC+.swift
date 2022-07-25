@@ -52,14 +52,37 @@ extension SearchViewController: UISearchBarDelegate {
 
 extension SearchViewController: PlayAnotherSong {
     
+    private func getSong(isNextSong: Bool) -> SearchViewModel.Cell? {
+        
+        guard let indexPath = table.indexPathForSelectedRow else { return nil }
+        table.deselectRow(at: indexPath, animated: true)
+        
+        var nextIndexPath: IndexPath!
+        
+        if isNextSong {
+            nextIndexPath = IndexPath(row: indexPath.row + 1, section: indexPath.section)
+            if nextIndexPath.row == searchViewModel.cells.count {
+                nextIndexPath.row = 0
+            }
+        } else {
+            nextIndexPath = IndexPath(row: indexPath.row - 1, section: indexPath.section)
+            if nextIndexPath.row == 0 {
+                nextIndexPath.row = searchViewModel.cells.count - 1
+            }
+        }
+        table.selectRow(at: nextIndexPath, animated: true, scrollPosition: .none)
+        let cellViewModel = searchViewModel.cells[indexPath.row]
+        
+        return cellViewModel
+    }
+    
     func playPrevSong() -> SearchViewModel.Cell? {
         print("play prev song")
-        return nil
+        return getSong(isNextSong: false)
     }
     
     func playNextSong() -> SearchViewModel.Cell? {
         print("play next song")
-        return nil
+        return getSong(isNextSong: true)
     }
-    
 }
