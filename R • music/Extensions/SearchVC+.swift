@@ -34,8 +34,8 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         let window = UIApplication.shared.keyWindow
         let songPlayer = Bundle.main.loadNibNamed("SongPlayer", owner: self)?.first as! SongPlayer
         songPlayer.setPlayer(viewModel: cellViewModel)
+        songPlayer.delegate = self
         window?.addSubview(songPlayer)
-        
     }
 }
 
@@ -48,4 +48,18 @@ extension SearchViewController: UISearchBarDelegate {
             self.interactor?.makeRequest(request: Search.Model.Request.RequestType.getTracks(searchText: searchText))
         })
     }
+}
+
+extension SearchViewController: PlayAnotherSong {
+    
+    func playPrevSong() -> SearchViewModel.Cell? {
+        print("play prev song")
+        return nil
+    }
+    
+    func playNextSong() -> SearchViewModel.Cell? {
+        print("play next song")
+        return nil
+    }
+    
 }

@@ -29,13 +29,14 @@ class SongPlayer: UIView {
         return avPlayer
     }()
     
+    weak var delegate: PlayAnotherSong?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         songImageView.layer.cornerRadius = 5
         songPlayerSlider.thumbTintColor = .gray
         songPlayerSlider.maximumTrackTintColor = .systemGray4
         songPlayerSlider.minimumTrackTintColor = .systemGray2
-        
     }
 
     //MARK: - Animation
@@ -61,6 +62,7 @@ class SongPlayer: UIView {
     }
 
     @IBAction func leftScrollPressed(_ sender: UIButton) {
+        
     }
 
     @IBAction func playOrPausePressed(_ sender: UIButton) {
@@ -76,10 +78,13 @@ class SongPlayer: UIView {
     }
 
     @IBAction func rightScrollPressed(_ sender: UIButton) {
+        let cellViewModel = delegate?.playNextSong()
+        guard let cellSong = cellViewModel else { return }
+        self.setPlayer(viewModel: cellSong)
     }
 
     @IBAction func volumeSliderChanged(_ sender: UISlider) {
-        
+        player.volume = volumeSlider.value
     }
 
     @IBAction func songTimeSliderChanged(_ sender: UISlider) {
