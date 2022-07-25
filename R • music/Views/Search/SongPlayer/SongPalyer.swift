@@ -31,14 +31,14 @@ class SongPlayer: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-       setupLayer()
+        songImageView.layer.cornerRadius = 5
+        songPlayerSlider.thumbTintColor = .gray
+        songPlayerSlider.maximumTrackTintColor = .systemGray4
+        songPlayerSlider.minimumTrackTintColor = .systemGray2
+        
     }
 
     //MARK: - Animation
-    
-    func setupLayer() {
-        songImageView.layer.cornerRadius = 5
-    }
     
     func bigSongIamge() {
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseInOut) {
@@ -79,9 +79,16 @@ class SongPlayer: UIView {
     }
 
     @IBAction func volumeSliderChanged(_ sender: UISlider) {
+        
     }
 
     @IBAction func songTimeSliderChanged(_ sender: UISlider) {
+        let percentage = songPlayerSlider.value
+        guard let duration = player.currentItem?.duration else { return }
+        let durationSec = CMTimeGetSeconds(duration)
+        let timeInSecs = Float64(percentage) * durationSec
+        let seekTime = CMTimeMakeWithSeconds(timeInSecs, preferredTimescale: 1)
+        player.seek(to: seekTime)
     }
     
     
@@ -103,7 +110,6 @@ class SongPlayer: UIView {
     }
     
     func playSong(previewUrl: String?) {
-        
         guard let url = URL(string: previewUrl ?? "") else { return }
         let playerItem = AVPlayerItem(url: url)
         player.replaceCurrentItem(with: playerItem)
@@ -118,6 +124,15 @@ class SongPlayer: UIView {
             let duration = self?.player.currentItem?.duration
             let currentDuration = ((duration ?? CMTimeMake(value: 1, timescale: 1)) - time).createString()
             self?.allTimeLabel.text = "\(currentDuration)"
+            self?.updateTimeSlider()
         }
+    }
+    
+    func updateTimeSlider() {
+        let currentTime = CMTimeGetSeconds(player.currentTime())
+        let duration = CMTimeGetSeconds(player.currentItem?.duration ?? CMTimeMake(value: 1, timescale: 1))
+        let percentage = currentTime / duration
+        self.songPlayerSlider.value = Float(percentage)
+        
     }
 }
