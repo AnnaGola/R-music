@@ -29,11 +29,32 @@ class SongPlayer: UIView {
         return avPlayer
     }()
     
-    
-    override class func awakeFromNib() {
+    override func awakeFromNib() {
         super.awakeFromNib()
-
+       setupLayer()
     }
+
+    //MARK: - Animation
+    
+    func setupLayer() {
+        songImageView.layer.cornerRadius = 5
+    }
+    
+    func bigSongIamge() {
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseInOut) {
+            self.songImageView.transform = .identity
+        }
+    }
+    
+    func smallSongImage() {
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseInOut) {
+            let scale: CGFloat = 0.8
+            self.songImageView.transform = CGAffineTransform(scaleX: scale, y: scale)
+        }
+    }
+    
+    
+    //MARK: - IBActions
 
     @IBAction func dragDownSwipe(_ sender: UIButton) {
         self.removeFromSuperview()
@@ -46,9 +67,11 @@ class SongPlayer: UIView {
         if player.timeControlStatus == .paused {
             player.play()
             playOrPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+            bigSongIamge()
         } else {
             player.pause()
             playOrPauseButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+            smallSongImage()
         }
     }
 
@@ -61,6 +84,8 @@ class SongPlayer: UIView {
     @IBAction func songTimeSliderChanged(_ sender: UISlider) {
     }
     
+    
+    // MARK: - Setup
     
     func setPlayer(viewModel: SearchViewModel.Cell) {
         songNameLabel.text = viewModel.trackName
