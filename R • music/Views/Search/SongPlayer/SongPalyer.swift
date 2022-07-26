@@ -54,6 +54,18 @@ class SongPlayer: UIView {
         }
     }
     
+    func playOrPauseState() {
+        if player.timeControlStatus == .paused {
+            player.play()
+            playOrPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+            bigSongIamge()
+        } else {
+            player.pause()
+            playOrPauseButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+            smallSongImage()
+        }
+    }
+    
     
     //MARK: - IBActions
 
@@ -69,15 +81,7 @@ class SongPlayer: UIView {
     }
 
     @IBAction func playOrPausePressed(_ sender: UIButton) {
-        if player.timeControlStatus == .paused {
-            player.play()
-            playOrPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
-            bigSongIamge()
-        } else {
-            player.pause()
-            playOrPauseButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
-            smallSongImage()
-        }
+        playOrPauseState()
     }
 
     @IBAction func rightScrollPressed(_ sender: UIButton) {

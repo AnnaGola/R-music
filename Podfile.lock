@@ -1,0 +1,26 @@
+PODS:
+  - Alamofire (5.0.5)
+  - Reveal-SDK (37)
+  - SDWebImage (5.13.2):
+    - SDWebImage/Core (= 5.13.2)
+  - SDWebImage/Core (5.13.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.0.0-beta.5)
+  - Reveal-SDK
+  - SDWebImage (~> 5.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Reveal-SDK
+    - SDWebImage
+
+SPEC CHECKSUMS:
+  Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
+  Reveal-SDK: 3d0eaebe2c2862b39a8341920e5cab305fbc01ca
+  SDWebImage: 72f86271a6f3139cc7e4a89220946489d4b9a866
+
+PODFILE CHECKSUM: a5a167894c843d55c26b7b9b987badc347c311be
+
+COCOAPODS: 1.11.3
