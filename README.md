@@ -12,7 +12,7 @@
 
 ## LaunchScreen и Архитектура проекта
 
-<img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202022-07-26%20at%2021.30.09.png" width="160">  <img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Снимок%20экрана%202022-07-26%20в%2020.29.45.png" width="172">  <img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Снимок%20экрана%202022-07-26%20в%2020.31.16.png" width="182">
+<img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202022-07-26%20at%2021.30.09.png" width="160">  <img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Снимок%20экрана%202022-07-26%20в%2020.29.45.png" width="174.5">  <img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Снимок%20экрана%202022-07-26%20в%2020.31.16.png" width="184">
 
 ## Главный экран
 
@@ -31,8 +31,10 @@ func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         })
     }
 ```
+При введении запроса появляется ActivityInspector в центре икрана, чтобы пользователь видел, что экран у него не завис, а приложение в данный момент подгружает его поисковый запрос с сервера. 
+Если скорость интернета низкая, то в первую очередь при прогрузке всей таблицы, картинки, которые еще не кэшированы благодаря Alamofire, будут подгружаться в дефолтном цвете приложения и только потом асинхронно загрузятся все остольные изображения.
 
-<img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202022-07-26%20at%2020.39.51.png" width="160">  <img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202022-07-26%20at%2020.40.21.png" width="160">   <img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202022-07-26%20at%2020.40.03.png" width="160">  <img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202022-07-26%20at%2020.40.07.png" width="160">
+<img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202022-07-26%20at%2021.30.41.png" width="160">  <img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202022-07-26%20at%2021.31.05.png" width="160">   <img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202022-07-26%20at%2020.40.03.png" width="160">  <img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202022-07-26%20at%2020.40.07.png" width="160">
 
 
 
