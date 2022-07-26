@@ -35,6 +35,13 @@
 		AF1A7F22288DDC3D00CDA821 /* SongPalyer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7F21288DDC3D00CDA821 /* SongPalyer.swift */; };
 		AF1A7F47288EF53000CDA821 /* CMTime+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7F46288EF53000CDA821 /* CMTime+.swift */; };
 		AF1A7F49288F1C8B00CDA821 /* PlayAnotherSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7F48288F1C8B00CDA821 /* PlayAnotherSong.swift */; };
+		AF1F1F1028905BA5007FDF5D /* PlaylistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1F1F0928905BA5007FDF5D /* PlaylistPresenter.swift */; };
+		AF1F1F1128905BA5007FDF5D /* PlaylistWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1F1F0A28905BA5007FDF5D /* PlaylistWorker.swift */; };
+		AF1F1F1228905BA5007FDF5D /* PlaylistRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1F1F0B28905BA5007FDF5D /* PlaylistRouter.swift */; };
+		AF1F1F1328905BA5007FDF5D /* PlaylistModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1F1F0C28905BA5007FDF5D /* PlaylistModels.swift */; };
+		AF1F1F1428905BA5007FDF5D /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1F1F0D28905BA5007FDF5D /* PlaylistViewController.swift */; };
+		AF1F1F1528905BA5007FDF5D /* PlaylistInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1F1F0E28905BA5007FDF5D /* PlaylistInteractor.swift */; };
+		AF1F1F1628905BA5007FDF5D /* PlaylistViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF1F1F0F28905BA5007FDF5D /* PlaylistViewController.xib */; };
 		D13D58B1B52E5160ED326786 /* Pods_R___music.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E65505FC8F857FF99CD22349 /* Pods_R___music.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +77,13 @@
 		AF1A7F21288DDC3D00CDA821 /* SongPalyer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongPalyer.swift; sourceTree = "<group>"; };
 		AF1A7F46288EF53000CDA821 /* CMTime+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMTime+.swift"; sourceTree = "<group>"; };
 		AF1A7F48288F1C8B00CDA821 /* PlayAnotherSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayAnotherSong.swift; sourceTree = "<group>"; };
+		AF1F1F0928905BA5007FDF5D /* PlaylistPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistPresenter.swift; sourceTree = "<group>"; };
+		AF1F1F0A28905BA5007FDF5D /* PlaylistWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistWorker.swift; sourceTree = "<group>"; };
+		AF1F1F0B28905BA5007FDF5D /* PlaylistRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistRouter.swift; sourceTree = "<group>"; };
+		AF1F1F0C28905BA5007FDF5D /* PlaylistModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistModels.swift; sourceTree = "<group>"; };
+		AF1F1F0D28905BA5007FDF5D /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
+		AF1F1F0E28905BA5007FDF5D /* PlaylistInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistInteractor.swift; sourceTree = "<group>"; };
+		AF1F1F0F28905BA5007FDF5D /* PlaylistViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaylistViewController.xib; sourceTree = "<group>"; };
 		C1B250B1099BAB02776D404D /* Pods-R • music.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-R • music.release.xcconfig"; path = "Target Support Files/Pods-R • music/Pods-R • music.release.xcconfig"; sourceTree = "<group>"; };
 		E65505FC8F857FF99CD22349 /* Pods_R___music.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_R___music.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -130,8 +144,6 @@
 		AF1A7EE1288BFE8500CDA821 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				AF1A7F10288DA47C00CDA821 /* SongPlayer */,
-				AF1A7F09288D81E600CDA821 /* ActivityIndicator */,
 				AF1A7EF1288C0A2A00CDA821 /* SearchViewController.storyboard */,
 				AF1A7EE6288BFEA800CDA821 /* SearchViewController.swift */,
 				AF1A7EE7288BFEA800CDA821 /* SearchInteractor.swift */,
@@ -140,6 +152,8 @@
 				AF1A7EE3288BFEA800CDA821 /* SearchWorker.swift */,
 				AF1A7EE4288BFEA800CDA821 /* SearchRouter.swift */,
 				AF1A7EFB288D262000CDA821 /* Cell */,
+				AF1A7F09288D81E600CDA821 /* ActivityIndicator */,
+				AF1A7F10288DA47C00CDA821 /* SongPlayer */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -223,7 +237,7 @@
 			children = (
 				AF1A7F00288D7BAB00CDA821 /* TabBar */,
 				AF1A7EE1288BFE8500CDA821 /* Search */,
-				AF1A7ED9288B16DE00CDA821 /* PlaylistVC.swift */,
+				AF1F1F0828905B78007FDF5D /* Playlist */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -243,6 +257,21 @@
 				AF1A7F21288DDC3D00CDA821 /* SongPalyer.swift */,
 			);
 			path = SongPlayer;
+			sourceTree = "<group>";
+		};
+		AF1F1F0828905B78007FDF5D /* Playlist */ = {
+			isa = PBXGroup;
+			children = (
+				AF1A7ED9288B16DE00CDA821 /* PlaylistVC.swift */,
+				AF1F1F0928905BA5007FDF5D /* PlaylistPresenter.swift */,
+				AF1F1F0A28905BA5007FDF5D /* PlaylistWorker.swift */,
+				AF1F1F0B28905BA5007FDF5D /* PlaylistRouter.swift */,
+				AF1F1F0C28905BA5007FDF5D /* PlaylistModels.swift */,
+				AF1F1F0D28905BA5007FDF5D /* PlaylistViewController.swift */,
+				AF1F1F0E28905BA5007FDF5D /* PlaylistInteractor.swift */,
+				AF1F1F0F28905BA5007FDF5D /* PlaylistViewController.xib */,
+			);
+			path = Playlist;
 			sourceTree = "<group>";
 		};
 		C977FFE407DCDCC78901B075 /* Frameworks */ = {
@@ -313,6 +342,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF1F1F1628905BA5007FDF5D /* PlaylistViewController.xib in Resources */,
 				AF1A7ECE288B131B00CDA821 /* LaunchScreen.storyboard in Resources */,
 				AF1A7ECB288B131B00CDA821 /* Assets.xcassets in Resources */,
 				AF1A7EF2288C0A2A00CDA821 /* SearchViewController.storyboard in Resources */,
@@ -370,9 +400,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF1F1F1128905BA5007FDF5D /* PlaylistWorker.swift in Sources */,
 				AF1A7F0F288D881900CDA821 /* SearchBusinessLogic.swift in Sources */,
 				AF1A7F49288F1C8B00CDA821 /* PlayAnotherSong.swift in Sources */,
 				AF1A7EDA288B16DE00CDA821 /* PlaylistVC.swift in Sources */,
+				AF1F1F1328905BA5007FDF5D /* PlaylistModels.swift in Sources */,
 				AF1A7F0B288D823000CDA821 /* Loader.swift in Sources */,
 				AF1A7ED6288B135800CDA821 /* TabBarController.swift in Sources */,
 				AF1A7EEE288BFEA800CDA821 /* SearchInteractor.swift in Sources */,
@@ -382,14 +414,18 @@
 				AF1A7F47288EF53000CDA821 /* CMTime+.swift in Sources */,
 				AF1A7EED288BFEA800CDA821 /* SearchViewController.swift in Sources */,
 				AF1A7F08288D817800CDA821 /* SearchDisplayLogic.swift in Sources */,
+				AF1F1F1528905BA5007FDF5D /* PlaylistInteractor.swift in Sources */,
 				AF1A7F0D288D87D900CDA821 /* SearchPresentationLogic.swift in Sources */,
 				AF1A7EEB288BFEA800CDA821 /* SearchRouter.swift in Sources */,
+				AF1F1F1428905BA5007FDF5D /* PlaylistViewController.swift in Sources */,
 				AF1A7F22288DDC3D00CDA821 /* SongPalyer.swift in Sources */,
 				AF1A7EEC288BFEA800CDA821 /* SearchModels.swift in Sources */,
 				AF1A7F05288D7E1600CDA821 /* TrackCellProtocol.swift in Sources */,
 				AF1A7EC4288B131300CDA821 /* SceneDelegate.swift in Sources */,
 				AF1A7EF7288C300D00CDA821 /* SearchVC+.swift in Sources */,
 				AF1A7EF4288C0DD600CDA821 /* UIVC+Storyboard.swift in Sources */,
+				AF1F1F1028905BA5007FDF5D /* PlaylistPresenter.swift in Sources */,
+				AF1F1F1228905BA5007FDF5D /* PlaylistRouter.swift in Sources */,
 				AF1A7EE9288BFEA800CDA821 /* SearchPresenter.swift in Sources */,
 				AF1A7EE0288BF73400CDA821 /* NetworkService.swift in Sources */,
 				AF1A7EFF288D264500CDA821 /* TrackCell.swift in Sources */,
