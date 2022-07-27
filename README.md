@@ -43,5 +43,10 @@ func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 
 При нажатии на любую ячейку октроется экран с запущенным плеером, в котором можно регулировать звук и момент в песне на слайдерах, перематывать песни вперед/назад с помощью боковых кнопок, а также останавливать песню и запускать её снова.
 
-При остановке песни, по нажатии на паузу, срабатывает метод
+При остановке песни, по нажатии на паузу, срабатывает метод playOrPauseState() где в if else при изменении pause на play, меняется изображение кнопки и размер изображения песни. Изменение происходит на 20% благодаря UIView.animate:
+
+```swift
+UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseInOut)
+```
+
 
