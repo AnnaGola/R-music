@@ -30,6 +30,7 @@ class SongPlayer: UIView {
     }()
     
     weak var delegate: PlayAnotherSong?
+    weak var tabBarDelegate: TabBarControllerDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -70,14 +71,14 @@ class SongPlayer: UIView {
     //MARK: - IBActions
 
     @IBAction func dragDownSwipe(_ sender: UIButton) {
-        self.removeFromSuperview()
+        
+        self.tabBarDelegate?.minSizeSongPlayer()
     }
 
     @IBAction func leftScrollPressed(_ sender: UIButton) {
         let cellViewModel = delegate?.playPrevSong()
         guard let cellSong = cellViewModel else { return }
         self.setPlayer(viewModel: cellSong)
-
     }
 
     @IBAction func playOrPausePressed(_ sender: UIButton) {
