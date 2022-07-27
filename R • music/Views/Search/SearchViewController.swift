@@ -16,6 +16,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     var searchViewModel = SearchViewModel.init(cells: [])
     var timer: Timer?
     lazy var loader = Loader()
+    weak var tabBarDelegate: TabBarControllerDelegate?
     
     @IBOutlet weak var table: UITableView!
     

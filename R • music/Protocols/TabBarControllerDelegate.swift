@@ -9,5 +9,5 @@ import UIKit
 
 protocol TabBarControllerDelegate: class {
     func minSizeSongPlayer()
-    func maxSizeSongPlayer()
+    func maxSizeSongPlayer(viewModel: SearchViewModel.Cell?)
 }

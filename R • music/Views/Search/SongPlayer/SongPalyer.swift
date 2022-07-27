@@ -11,7 +11,11 @@ import AVKit
 
 class SongPlayer: UIView {
     
-    @IBOutlet weak var blurryBackgroundImageView: UIImageView!
+    @IBOutlet weak var miniSongPlayer: UIView!
+    @IBOutlet weak var miniNameOfTheSong: UILabel!
+    @IBOutlet weak var miniImageOfTheSong: UIImageView!
+    @IBOutlet weak var miniPlayOrPauseButton: UIButton!
+    @IBOutlet weak var maxStackView: UIStackView!
     @IBOutlet weak var songImageView: UIImageView!
     @IBOutlet weak var songPlayerSlider: UISlider!
     @IBOutlet weak var currentTimeLabel: UILabel!
@@ -59,17 +63,19 @@ class SongPlayer: UIView {
         if player.timeControlStatus == .paused {
             player.play()
             playOrPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+            miniPlayOrPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
             bigSongIamge()
         } else {
             player.pause()
             playOrPauseButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+            miniPlayOrPauseButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
             smallSongImage()
         }
     }
     
     
     //MARK: - IBActions
-
+    
     @IBAction func dragDownSwipe(_ sender: UIButton) {
         
         self.tabBarDelegate?.minSizeSongPlayer()
@@ -108,18 +114,17 @@ class SongPlayer: UIView {
     // MARK: - Setup
     
     func setPlayer(viewModel: SearchViewModel.Cell) {
+        miniNameOfTheSong.text = viewModel.trackName
         songNameLabel.text = viewModel.trackName
         artistNameLabel.text = viewModel.artistName
         playSong(previewUrl: viewModel.previewUrl)
         observeCurrentTime()
-        
+        playOrPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+                            
         let string600 = viewModel.iconUrlString?.replacingOccurrences(of: "100x100", with: "600x600")
         guard let url = URL(string: string600 ?? "") else { return }
+        miniImageOfTheSong.sd_setImage(with: url)
         songImageView.sd_setImage(with: url)
-        
-        let string5 = viewModel.iconUrlString?.replacingOccurrences(of: "100x100", with: "5x5")
-        guard let url = URL(string: string5 ?? "") else { return }
-        blurryBackgroundImageView.sd_setImage(with: url)
     }
     
     func playSong(previewUrl: String?) {

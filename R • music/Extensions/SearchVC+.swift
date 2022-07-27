@@ -31,11 +31,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cellViewModel = searchViewModel.cells[indexPath.row]
         
-        let window = UIApplication.shared.keyWindow
-        let songPlayer: SongPlayer = SongPlayer.loadSongPlayer()
-        songPlayer.setPlayer(viewModel: cellViewModel)
-        songPlayer.delegate = self
-        window?.addSubview(songPlayer)
+        tabBarDelegate?.maxSizeSongPlayer(viewModel: cellViewModel)
     }
 }
 
