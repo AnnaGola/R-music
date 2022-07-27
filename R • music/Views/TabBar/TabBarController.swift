@@ -13,7 +13,7 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
         
         view.backgroundColor = .white
-        
+        setupSongPlayer()
         tabBar.tintColor = #colorLiteral(red: 0.8425114751, green: 0.6422668695, blue: 0.550950408, alpha: 1)
         
         let searchVC: SearchViewController = SearchViewController.loadFromStoryboard()
@@ -31,5 +31,11 @@ class TabBarController: UITabBarController {
         rootVC.navigationItem.title = title
         navVC.navigationBar.prefersLargeTitles = true
         return navVC
+    }
+    
+    func setupSongPlayer() {
+        
+        let songPlayer: SongPlayer = SongPlayer.loadSongPlayer()
+        view.insertSubview(songPlayer, belowSubview: tabBar)
     }
 }

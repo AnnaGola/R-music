@@ -32,7 +32,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         let cellViewModel = searchViewModel.cells[indexPath.row]
         
         let window = UIApplication.shared.keyWindow
-        let songPlayer = Bundle.main.loadNibNamed("SongPlayer", owner: self)?.first as! SongPlayer
+        let songPlayer: SongPlayer = SongPlayer.loadSongPlayer()
         songPlayer.setPlayer(viewModel: cellViewModel)
         songPlayer.delegate = self
         window?.addSubview(songPlayer)
