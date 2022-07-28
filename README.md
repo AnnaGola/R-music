@@ -48,7 +48,7 @@ func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 ```swift
 UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseInOut)
 ```
-Так же цвет кнопок, текста и цвета сслайдера с аудиодорожкой будут меняться в зависимости от оттенка фона:
+Так же цвет кнопок, текста и цвета слайдера с аудиодорожкой будут меняться в зависимости от оттенка фона:
 
  <img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202022-07-25%20at%2019.48.16.png" width="160">   <img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202022-07-25%20at%2019.42.20.png" width="160">
  
