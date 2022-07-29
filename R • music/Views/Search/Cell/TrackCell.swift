@@ -24,6 +24,7 @@ class TrackCell: UITableViewCell {
 //MARK: - Actions
     
     @IBAction func addSongTapped(_ sender: UIButton) {
+        savingSong()
     }
     
 //MARK: - Properties
@@ -51,5 +52,13 @@ class TrackCell: UITableViewCell {
         
         guard let url = URL(string: viewModel.iconUrlString ?? "") else { return }
         trackImageView.sd_setImage(with: url)
+    }
+    
+    func savingSong() {
+        
+        if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: cell, requiringSecureCoding: false) {
+            let defaults = UserDefaults.standard
+            defaults.set(savedData, forKey: "song")
+        }
     }
 }

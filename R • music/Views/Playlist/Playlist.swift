@@ -11,7 +11,7 @@ struct Playlist: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 30) {
-            GeometryReader { geometry in
+                GeometryReader { geometry in
                 HStack(spacing: 16) {
                     Button {
                         print("12345")
@@ -31,7 +31,6 @@ struct Playlist: View {
                             .background(Color.init(#colorLiteral(red: 0.8425114751, green: 0.6422668695, blue: 0.550950408, alpha: 0.2)))
                             .cornerRadius(10)
                     }
-                    
                 }
             }.padding().frame(height: 50)
                 Divider().padding(.leading).padding(.trailing)

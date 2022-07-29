@@ -26,6 +26,7 @@ class TabBarController: UITabBarController {
         
         view.backgroundColor = .white
         tabBar.tintColor = #colorLiteral(red: 0.8425114751, green: 0.6422668695, blue: 0.550950408, alpha: 1)
+        tabBar.barTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         setupSongPlayer()
         searchVC.tabBarDelegate = self
         
