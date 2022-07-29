@@ -12,7 +12,6 @@
 		AF1A7ECB288B131B00CDA821 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF1A7ECA288B131B00CDA821 /* Assets.xcassets */; };
 		AF1A7ECE288B131B00CDA821 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF1A7ECC288B131B00CDA821 /* LaunchScreen.storyboard */; };
 		AF1A7ED6288B135800CDA821 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7ED5288B135800CDA821 /* TabBarController.swift */; };
-		AF1A7EDA288B16DE00CDA821 /* PlaylistVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7ED9288B16DE00CDA821 /* PlaylistVC.swift */; };
 		AF1A7EDC288B339200CDA821 /* TrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7EDB288B339200CDA821 /* TrackModel.swift */; };
 		AF1A7EE0288BF73400CDA821 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7EDF288BF73400CDA821 /* NetworkService.swift */; };
 		AF1A7EE9288BFEA800CDA821 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7EE2288BFEA800CDA821 /* SearchPresenter.swift */; };
@@ -35,6 +34,7 @@
 		AF1A7F22288DDC3D00CDA821 /* SongPalyer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7F21288DDC3D00CDA821 /* SongPalyer.swift */; };
 		AF1A7F47288EF53000CDA821 /* CMTime+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7F46288EF53000CDA821 /* CMTime+.swift */; };
 		AF1A7F49288F1C8B00CDA821 /* PlayAnotherSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7F48288F1C8B00CDA821 /* PlayAnotherSong.swift */; };
+		AFA6C0412894185900318D05 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6C0402894185900318D05 /* Playlist.swift */; };
 		AFDE0F502891932D00759ED7 /* UIView extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDE0F4F2891932D00759ED7 /* UIView extension.swift */; };
 		AFDE0F52289197DB00759ED7 /* TabBarControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDE0F51289197DB00759ED7 /* TabBarControllerDelegate.swift */; };
 		D13D58B1B52E5160ED326786 /* Pods_R___music.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E65505FC8F857FF99CD22349 /* Pods_R___music.framework */; };
@@ -49,7 +49,6 @@
 		AF1A7ECD288B131B00CDA821 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF1A7ECF288B131B00CDA821 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF1A7ED5288B135800CDA821 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		AF1A7ED9288B16DE00CDA821 /* PlaylistVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistVC.swift; sourceTree = "<group>"; };
 		AF1A7EDB288B339200CDA821 /* TrackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackModel.swift; sourceTree = "<group>"; };
 		AF1A7EDF288BF73400CDA821 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		AF1A7EE2288BFEA800CDA821 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
@@ -72,6 +71,7 @@
 		AF1A7F21288DDC3D00CDA821 /* SongPalyer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongPalyer.swift; sourceTree = "<group>"; };
 		AF1A7F46288EF53000CDA821 /* CMTime+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMTime+.swift"; sourceTree = "<group>"; };
 		AF1A7F48288F1C8B00CDA821 /* PlayAnotherSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayAnotherSong.swift; sourceTree = "<group>"; };
+		AFA6C0402894185900318D05 /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		AFDE0F4F2891932D00759ED7 /* UIView extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView extension.swift"; sourceTree = "<group>"; };
 		AFDE0F51289197DB00759ED7 /* TabBarControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarControllerDelegate.swift; sourceTree = "<group>"; };
 		C1B250B1099BAB02776D404D /* Pods-R • music.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-R • music.release.xcconfig"; path = "Target Support Files/Pods-R • music/Pods-R • music.release.xcconfig"; sourceTree = "<group>"; };
@@ -124,7 +124,6 @@
 				AF1A7EFA288C416F00CDA821 /* Model */,
 				AF1A7EF0288BFED700CDA821 /* Network */,
 				AF1A7F06288D7E4900CDA821 /* Views */,
-				AF1A7ED9288B16DE00CDA821 /* PlaylistVC.swift */,
 				AF1A7F03288D7DF500CDA821 /* Protocols */,
 				AF1A7EF5288C2FEF00CDA821 /* Extensions */,
 				AF1A7EF9288C307700CDA821 /* Support files */,
@@ -228,6 +227,7 @@
 		AF1A7F06288D7E4900CDA821 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AFA6C03F2894184A00318D05 /* Playlist */,
 				AF1A7F00288D7BAB00CDA821 /* TabBar */,
 				AF1A7EE1288BFE8500CDA821 /* Search */,
 			);
@@ -249,6 +249,14 @@
 				AF1A7F21288DDC3D00CDA821 /* SongPalyer.swift */,
 			);
 			path = SongPlayer;
+			sourceTree = "<group>";
+		};
+		AFA6C03F2894184A00318D05 /* Playlist */ = {
+			isa = PBXGroup;
+			children = (
+				AFA6C0402894185900318D05 /* Playlist.swift */,
+			);
+			path = Playlist;
 			sourceTree = "<group>";
 		};
 		C977FFE407DCDCC78901B075 /* Frameworks */ = {
@@ -379,7 +387,6 @@
 				AF1A7F0F288D881900CDA821 /* SearchBusinessLogic.swift in Sources */,
 				AF1A7F49288F1C8B00CDA821 /* PlayAnotherSong.swift in Sources */,
 				AFDE0F502891932D00759ED7 /* UIView extension.swift in Sources */,
-				AF1A7EDA288B16DE00CDA821 /* PlaylistVC.swift in Sources */,
 				AF1A7F0B288D823000CDA821 /* Loader.swift in Sources */,
 				AF1A7ED6288B135800CDA821 /* TabBarController.swift in Sources */,
 				AF1A7EEE288BFEA800CDA821 /* SearchInteractor.swift in Sources */,
@@ -396,6 +403,7 @@
 				AF1A7F05288D7E1600CDA821 /* TrackCellProtocol.swift in Sources */,
 				AF1A7EC4288B131300CDA821 /* SceneDelegate.swift in Sources */,
 				AF1A7EF7288C300D00CDA821 /* SearchVC+.swift in Sources */,
+				AFA6C0412894185900318D05 /* Playlist.swift in Sources */,
 				AF1A7EF4288C0DD600CDA821 /* UIVC+Storyboard.swift in Sources */,
 				AF1A7EE9288BFEA800CDA821 /* SearchPresenter.swift in Sources */,
 				AF1A7EE0288BF73400CDA821 /* NetworkService.swift in Sources */,

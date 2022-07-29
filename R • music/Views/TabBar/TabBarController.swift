@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class TabBarController: UITabBarController {
     
@@ -28,9 +29,12 @@ class TabBarController: UITabBarController {
         setupSongPlayer()
         searchVC.tabBarDelegate = self
         
+        let playlist = Playlist()
+        let hostVC = UIHostingController(rootView: playlist)
+        
         viewControllers = [
             createVC(rootVC: searchVC, image: #imageLiteral(resourceName: "search") , title: "Search"),
-            createVC(rootVC: PlaylistVC(), image: #imageLiteral(resourceName: "library"), title: "Playlist")
+            hostVC
         ]
     }
     
@@ -65,8 +69,8 @@ class TabBarController: UITabBarController {
 extension TabBarController: TabBarControllerDelegate {
     
     func maxSizeSongPlayer(viewModel: SearchViewModel.Cell?) {
-        maxTopAnchor.isActive = true
         minTopAnchor.isActive = false
+        maxTopAnchor.isActive = true
         bottomAnchor.constant = 0
         maxTopAnchor.constant = 0
         

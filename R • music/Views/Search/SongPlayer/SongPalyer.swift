@@ -86,49 +86,7 @@ class SongPlayer: UIView {
         songPlayerSlider.thumbTintColor = .gray
         songPlayerSlider.maximumTrackTintColor = .systemGray4
         songPlayerSlider.minimumTrackTintColor = .systemGray2
-    }
-    
-    func bigSongIamge() {
-        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseInOut) {
-            self.songImageView.transform = .identity
-        }
-    }
-    
-    func smallSongImage() {
-        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseInOut) {
-            let scale: CGFloat = 0.8
-            self.songImageView.transform = CGAffineTransform(scaleX: scale, y: scale)
-        }
-    }
-    
-    func playOrPauseState() {
-        if player.timeControlStatus == .paused {
-            player.play()
-            playOrPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
-            miniPlayOrPauseButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
-            bigSongIamge()
-        } else {
-            player.pause()
-            playOrPauseButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
-            miniPlayOrPauseButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
-            smallSongImage()
-        }
-    }
-    
-    func setPlayer(viewModel: SearchViewModel.Cell) {
-        miniNameOfTheSong.text = viewModel.trackName
-        songNameLabel.text = viewModel.trackName
-        artistNameLabel.text = viewModel.artistName
-        playSong(previewUrl: viewModel.previewUrl)
-        monitorStartTime()
-        observeCurrentTime()
-        playOrPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
-        miniPlayOrPauseButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
-        
-        let string600 = viewModel.iconUrlString?.replacingOccurrences(of: "100x100", with: "600x600")
-        guard let url = URL(string: string600 ?? "") else { return }
-        miniImageOfTheSong.sd_setImage(with: url)
-        songImageView.sd_setImage(with: url)
+        setupGestures()
     }
     
     func playSong(previewUrl: String?) {
@@ -163,5 +121,122 @@ class SongPlayer: UIView {
         let duration = CMTimeGetSeconds(player.currentItem?.duration ?? CMTimeMake(value: 1, timescale: 1))
         let percentage = currentTime / duration
         self.songPlayerSlider.value = Float(percentage)
+    }
+
+    
+//MARK: - Animation
+    
+    func bigSongIamge() {
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseInOut) {
+            self.songImageView.transform = .identity
+        }
+    }
+    
+    func smallSongImage() {
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseInOut) {
+            let scale: CGFloat = 0.8
+            self.songImageView.transform = CGAffineTransform(scaleX: scale, y: scale)
+        }
+    }
+    
+    func playOrPauseState() {
+        if player.timeControlStatus == .paused {
+            player.play()
+            playOrPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+            miniPlayOrPauseButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+            bigSongIamge()
+        } else {
+            player.pause()
+            playOrPauseButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+            miniPlayOrPauseButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
+            smallSongImage()
+        }
+    }
+    
+//MARK: - Setup Player
+    
+    func setPlayer(viewModel: SearchViewModel.Cell) {
+        miniNameOfTheSong.text = viewModel.trackName
+        songNameLabel.text = viewModel.trackName
+        artistNameLabel.text = viewModel.artistName
+        playSong(previewUrl: viewModel.previewUrl)
+        monitorStartTime()
+        observeCurrentTime()
+        playOrPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+        miniPlayOrPauseButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+        
+        let string600 = viewModel.iconUrlString?.replacingOccurrences(of: "100x100", with: "600x600")
+        guard let url = URL(string: string600 ?? "") else { return }
+        miniImageOfTheSong.sd_setImage(with: url)
+        songImageView.sd_setImage(with: url)
+    }
+    
+    
+//MARK: - Setup Gestures
+    
+    func setupGestures() {
+        miniSongPlayer.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(resizing)))
+        miniSongPlayer.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(paning)))
+        addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(dissmissPlayer)))
+    }
+                             
+    @objc func paning(gesture: UIPanGestureRecognizer) {
+
+        switch gesture.state {
+        case .began:
+            print("")
+        case .changed:
+            paningChanged(gesture: gesture)
+        case .ended:
+            paningEnded(gesture: gesture)
+        @unknown default:
+            print("")
+        }
+    }
+    
+    func paningChanged(gesture: UIPanGestureRecognizer) {
+        let translation = gesture.translation(in: self.superview)
+        self.transform = CGAffineTransform(translationX: 0, y: translation.y)
+        let newTransperancy = 1 + translation.y / 250
+        self.miniSongPlayer.alpha = newTransperancy < 0 ? 0 : newTransperancy
+        self.maxStackView.alpha = -translation.y / 250
+    }
+    
+    func paningEnded(gesture: UIPanGestureRecognizer) {
+        let tranlation = gesture.translation(in: self.superview)
+        let velocity = gesture.velocity(in: self.superview)
+        
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 1, options: .curveEaseInOut) {
+            self.transform = .identity
+            if tranlation.y < -250 && velocity.y < -500 {
+                self.tabBarDelegate?.maxSizeSongPlayer(viewModel: nil)
+            } else {
+                self.miniSongPlayer.alpha = 1
+                self.maxStackView.alpha = 0
+            }
+        }
+    }
+    
+    @objc func dissmissPlayer(gesture: UIPanGestureRecognizer) {
+        
+        switch gesture.state {
+        case .changed:
+            let translation = gesture.translation(in: self.superview)
+            maxStackView.transform = CGAffineTransform(translationX: 0, y: translation.y)
+        case .ended:
+            let translation = gesture.translation(in: self.superview)
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseInOut) {
+                self.maxStackView.transform = .identity
+                if translation.y > 100 {
+                    self.tabBarDelegate?.minSizeSongPlayer()
+                }
+            }
+        @unknown default:
+            print("")
+        }
+    }
+    
+     @objc func resizing() {
+         self.tabBarDelegate?.maxSizeSongPlayer(viewModel: nil)
     }
 }
