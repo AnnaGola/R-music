@@ -31,10 +31,13 @@ class TabBarController: UITabBarController {
         
         let playlist = Playlist()
         let hostVC = UIHostingController(rootView: playlist)
+        hostVC.tabBarItem.image = #imageLiteral(resourceName: "library")
+        hostVC.tabBarItem.title = "Playlist"
+        
         
         viewControllers = [
             hostVC,
-            createVC(rootVC: searchVC, image: #imageLiteral(resourceName: "search") , title: "Search"),
+            createVC(rootVC: searchVC, image: #imageLiteral(resourceName: "search") , title: "Search")
         ]
     }
     

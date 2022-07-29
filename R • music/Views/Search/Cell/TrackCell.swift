@@ -24,8 +24,12 @@ class TrackCell: UITableViewCell {
 //MARK: - Actions
     
     @IBAction func addSongTapped(_ sender: UIButton) {
-        
     }
+    
+//MARK: - Properties
+    
+    var cell: SearchViewModel.Cell?
+    
     
 //MARK: - Methods
     
@@ -38,7 +42,9 @@ class TrackCell: UITableViewCell {
            trackImageView.image = nil
     }
     
-    func setCell(viewModel: TrackCellProtocol) {
+    func setCell(viewModel: SearchViewModel.Cell) {
+        
+        self.cell = viewModel
         songNameLabel.text = viewModel.trackName
         artistNameLabel.text = viewModel.artistName
         albumNameLabel.text = viewModel.collectionName

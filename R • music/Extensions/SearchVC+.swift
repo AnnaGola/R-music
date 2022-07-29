@@ -78,6 +78,7 @@ extension SearchViewController: PlayAnotherSong {
         return cellViewModel
     }
     
+    
     func playPrevSong() -> SearchViewModel.Cell? {
         return getSong(isNextSong: false)
     }

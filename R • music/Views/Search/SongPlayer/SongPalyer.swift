@@ -98,7 +98,7 @@ class SongPlayer: UIView {
         player.play()
     }
     
-    func monitorStartTime() {
+    func monitorTime() {
         let time = CMTimeMake(value: 1, timescale: 3)
         let times = [NSValue(time: time)]
         player.addBoundaryTimeObserver(forTimes: times, queue: .main) { [weak self] in
@@ -115,6 +115,7 @@ class SongPlayer: UIView {
             let currentDuration = ((duration ?? CMTimeMake(value: 1, timescale: 1)) - time).createString()
             self?.allTimeLabel.text = "\(currentDuration)"
             self?.updateTimeSlider()
+            
         }
     }
     
@@ -162,7 +163,7 @@ class SongPlayer: UIView {
         songNameLabel.text = viewModel.trackName
         artistNameLabel.text = viewModel.artistName
         playSong(previewUrl: viewModel.previewUrl)
-        monitorStartTime()
+        monitorTime()
         observeCurrentTime()
         playOrPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
         miniPlayOrPauseButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)

@@ -32,7 +32,7 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="song name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ze9-Fo-g6w">
                                     <rect key="frame" x="64" y="0.0" width="270" height="48"/>
                                     <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="18"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFT-Zd-IuJ">
@@ -40,7 +40,7 @@
                                     <constraints>
                                         <constraint firstAttribute="width" constant="48" id="clY-z7-RnZ"/>
                                     </constraints>
-                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="play" catalog="system" title="  "/>
                                     <connections>
@@ -53,8 +53,8 @@
                             </constraints>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" systemColor="tertiarySystemFillColor"/>
-                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.86412094578598486" green="0.86412094578598486" blue="0.86412094578598486" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="aD9-OM-Pxv" firstAttribute="leading" secondItem="FUY-oc-byi" secondAttribute="leading" constant="8" id="6sF-mG-X5p"/>
                         <constraint firstAttribute="height" constant="64" id="BY3-1z-dRa"/>
@@ -201,16 +201,16 @@
             <viewLayoutGuide key="safeArea" id="Gh2-x7-Egw"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="VFr-0W-eXO" firstAttribute="centerY" secondItem="2vb-QU-srR" secondAttribute="centerY" id="4XM-mf-gLX"/>
                 <constraint firstItem="Gh2-x7-Egw" firstAttribute="bottom" secondItem="zp7-D3-v41" secondAttribute="bottom" constant="30" id="FVS-71-eCE"/>
-                <constraint firstAttribute="bottom" secondItem="VFr-0W-eXO" secondAttribute="bottom" id="Fu6-3H-Yrr"/>
-                <constraint firstItem="VFr-0W-eXO" firstAttribute="trailing" secondItem="Gh2-x7-Egw" secondAttribute="trailing" id="O3C-x1-fpG"/>
+                <constraint firstItem="VFr-0W-eXO" firstAttribute="trailing" secondItem="FUY-oc-byi" secondAttribute="trailing" id="MbB-ee-fh2"/>
+                <constraint firstItem="VFr-0W-eXO" firstAttribute="leading" secondItem="FUY-oc-byi" secondAttribute="leading" id="Qw6-iV-bQp"/>
                 <constraint firstItem="FUY-oc-byi" firstAttribute="top" secondItem="Gh2-x7-Egw" secondAttribute="top" id="hQ1-HL-MVO"/>
-                <constraint firstItem="VFr-0W-eXO" firstAttribute="top" secondItem="2vb-QU-srR" secondAttribute="top" id="hs2-Ta-1fT"/>
                 <constraint firstItem="Gh2-x7-Egw" firstAttribute="trailing" secondItem="zp7-D3-v41" secondAttribute="trailing" constant="30" id="iId-pB-O2C"/>
                 <constraint firstItem="zp7-D3-v41" firstAttribute="top" secondItem="Gh2-x7-Egw" secondAttribute="top" id="nC0-EM-9Sv"/>
+                <constraint firstItem="VFr-0W-eXO" firstAttribute="top" secondItem="2vb-QU-srR" secondAttribute="top" id="uBw-E8-mkQ"/>
                 <constraint firstItem="FUY-oc-byi" firstAttribute="leading" secondItem="Gh2-x7-Egw" secondAttribute="leading" id="uSn-Ak-BFB"/>
                 <constraint firstItem="Gh2-x7-Egw" firstAttribute="trailing" secondItem="FUY-oc-byi" secondAttribute="trailing" id="uZp-dF-Jmz"/>
-                <constraint firstItem="VFr-0W-eXO" firstAttribute="leading" secondItem="Gh2-x7-Egw" secondAttribute="leading" id="vuf-8d-SbY"/>
                 <constraint firstItem="zp7-D3-v41" firstAttribute="leading" secondItem="Gh2-x7-Egw" secondAttribute="leading" constant="30" id="yis-zx-krm"/>
             </constraints>
             <connections>
@@ -245,9 +245,6 @@
         <image name="play" width="59" height="59"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="tertiarySystemFillColor">
-            <color red="0.46274509803921571" green="0.46274509803921571" blue="0.50196078431372548" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
