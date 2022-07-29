@@ -9,6 +9,9 @@
 import UIKit
 
 class SearchViewController: UIViewController, SearchDisplayLogic {
+  
+    
+//MARK: - Properties
     
     var interactor: SearchBusinessLogic?
     var router: (NSObjectProtocol & SearchRoutingLogic)?
@@ -28,7 +31,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
         setup()
     }
     
-    // MARK: Setup
+//MARK: - Setup
     
     private func setup() {
         let viewController = self
@@ -57,7 +60,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
         table.tableFooterView = loader
     }
     
-    // MARK: Routing
+//MARK: - Routing
 
     func displayData(viewModel: Search.Model.ViewModel.ViewModelData) {
         

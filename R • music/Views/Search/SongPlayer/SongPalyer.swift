@@ -10,6 +10,8 @@ import SDWebImage
 import AVKit
 
 class SongPlayer: UIView {
+
+//MARK: - Outlets
     
     @IBOutlet weak var miniSongPlayer: UIView!
     @IBOutlet weak var miniNameOfTheSong: UILabel!
@@ -26,15 +28,62 @@ class SongPlayer: UIView {
     @IBOutlet weak var minVolumeImageView: UIImageView!
     @IBOutlet weak var maxVolumeImageView: UIImageView!
     @IBOutlet weak var playOrPauseButton: UIButton!
+
+    
+//MARK: - Actions
+
+    @IBAction func dragDownSwipe(_ sender: UIButton) {
+        self.tabBarDelegate?.minSizeSongPlayer()
+    }
+
+    @IBAction func leftScrollPressed(_ sender: UIButton) {
+        let cellViewModel = delegate?.playPrevSong()
+        guard let cellSong = cellViewModel else { return }
+        self.setPlayer(viewModel: cellSong)
+        print("left button tapped")
+    }
+
+    @IBAction func playOrPausePressed(_ sender: UIButton) {
+        playOrPauseState()
+        print("button tapped")
+    }
+
+    @IBAction func rightScrollPressed(_ sender: UIButton) {
+        let cellViewModel = delegate?.playNextSong()
+        guard let cellSong = cellViewModel else { return }
+        self.setPlayer(viewModel: cellSong)
+        print("right button tapped")
+    }
+
+    @IBAction func volumeSliderChanged(_ sender: UISlider) {
+        player.volume = volumeSlider.value
+    }
+
+    @IBAction func songTimeSliderChanged(_ sender: UISlider) {
+        let percentage = songPlayerSlider.value
+        guard let duration = player.currentItem?.duration else { return }
+        let durationSec = CMTimeGetSeconds(duration)
+        let timeInSecs = Float64(percentage) * durationSec
+        let seekTime = CMTimeMakeWithSeconds(timeInSecs, preferredTimescale: 1)
+        player.seek(to: seekTime)
+    }
+
+    
+    
+//MARK: - Properties
     
     let player: AVPlayer = {
         let avPlayer = AVPlayer()
         avPlayer.automaticallyWaitsToMinimizeStalling = false
         return avPlayer
     }()
-    
+
     weak var delegate: PlayAnotherSong?
     weak var tabBarDelegate: TabBarControllerDelegate?
+
+
+
+//MARK: - Methods
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -42,9 +91,8 @@ class SongPlayer: UIView {
         songPlayerSlider.thumbTintColor = .gray
         songPlayerSlider.maximumTrackTintColor = .systemGray4
         songPlayerSlider.minimumTrackTintColor = .systemGray2
+        miniPlayOrPauseButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
-
-    //MARK: - Animation
     
     func bigSongIamge() {
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseInOut) {
@@ -73,46 +121,6 @@ class SongPlayer: UIView {
         }
     }
     
-    
-    //MARK: - IBActions
-    
-    @IBAction func dragDownSwipe(_ sender: UIButton) {
-        
-        self.tabBarDelegate?.minSizeSongPlayer()
-    }
-
-    @IBAction func leftScrollPressed(_ sender: UIButton) {
-        let cellViewModel = delegate?.playPrevSong()
-        guard let cellSong = cellViewModel else { return }
-        self.setPlayer(viewModel: cellSong)
-    }
-
-    @IBAction func playOrPausePressed(_ sender: UIButton) {
-        playOrPauseState()
-    }
-
-    @IBAction func rightScrollPressed(_ sender: UIButton) {
-        let cellViewModel = delegate?.playNextSong()
-        guard let cellSong = cellViewModel else { return }
-        self.setPlayer(viewModel: cellSong)
-    }
-
-    @IBAction func volumeSliderChanged(_ sender: UISlider) {
-        player.volume = volumeSlider.value
-    }
-
-    @IBAction func songTimeSliderChanged(_ sender: UISlider) {
-        let percentage = songPlayerSlider.value
-        guard let duration = player.currentItem?.duration else { return }
-        let durationSec = CMTimeGetSeconds(duration)
-        let timeInSecs = Float64(percentage) * durationSec
-        let seekTime = CMTimeMakeWithSeconds(timeInSecs, preferredTimescale: 1)
-        player.seek(to: seekTime)
-    }
-    
-    
-    // MARK: - Setup
-    
     func setPlayer(viewModel: SearchViewModel.Cell) {
         miniNameOfTheSong.text = viewModel.trackName
         songNameLabel.text = viewModel.trackName
@@ -120,7 +128,7 @@ class SongPlayer: UIView {
         playSong(previewUrl: viewModel.previewUrl)
         observeCurrentTime()
         playOrPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
-                            
+        
         let string600 = viewModel.iconUrlString?.replacingOccurrences(of: "100x100", with: "600x600")
         guard let url = URL(string: string600 ?? "") else { return }
         miniImageOfTheSong.sd_setImage(with: url)

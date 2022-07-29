@@ -7,6 +7,8 @@
 
 import UIKit
 
+//MARK: - Delegate/DataSource
+
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -35,6 +37,8 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+//MARK: - SearchBar
+
 extension SearchViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -45,6 +49,8 @@ extension SearchViewController: UISearchBarDelegate {
         })
     }
 }
+
+//MARK: - PlayAnotherSong
 
 extension SearchViewController: PlayAnotherSong {
     
