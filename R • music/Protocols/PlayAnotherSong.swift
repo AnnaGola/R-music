@@ -12,3 +12,4 @@ protocol PlayAnotherSong: class {
     func playNextSong() -> SearchViewModel.Cell?
 }
 
+

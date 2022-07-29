@@ -40,19 +40,16 @@ class SongPlayer: UIView {
         let cellViewModel = delegate?.playPrevSong()
         guard let cellSong = cellViewModel else { return }
         self.setPlayer(viewModel: cellSong)
-        print("left button tapped")
     }
 
     @IBAction func playOrPausePressed(_ sender: UIButton) {
         playOrPauseState()
-        print("button tapped")
     }
 
     @IBAction func rightScrollPressed(_ sender: UIButton) {
         let cellViewModel = delegate?.playNextSong()
         guard let cellSong = cellViewModel else { return }
         self.setPlayer(viewModel: cellSong)
-        print("right button tapped")
     }
 
     @IBAction func volumeSliderChanged(_ sender: UISlider) {
@@ -67,7 +64,6 @@ class SongPlayer: UIView {
         let seekTime = CMTimeMakeWithSeconds(timeInSecs, preferredTimescale: 1)
         player.seek(to: seekTime)
     }
-
     
     
 //MARK: - Properties
@@ -80,8 +76,7 @@ class SongPlayer: UIView {
 
     weak var delegate: PlayAnotherSong?
     weak var tabBarDelegate: TabBarControllerDelegate?
-
-
+    
 
 //MARK: - Methods
     
@@ -91,7 +86,6 @@ class SongPlayer: UIView {
         songPlayerSlider.thumbTintColor = .gray
         songPlayerSlider.maximumTrackTintColor = .systemGray4
         songPlayerSlider.minimumTrackTintColor = .systemGray2
-        miniPlayOrPauseButton.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
     
     func bigSongIamge() {
@@ -111,12 +105,12 @@ class SongPlayer: UIView {
         if player.timeControlStatus == .paused {
             player.play()
             playOrPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
-            miniPlayOrPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+            miniPlayOrPauseButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
             bigSongIamge()
         } else {
             player.pause()
             playOrPauseButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
-            miniPlayOrPauseButton.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+            miniPlayOrPauseButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
             smallSongImage()
         }
     }
@@ -126,8 +120,10 @@ class SongPlayer: UIView {
         songNameLabel.text = viewModel.trackName
         artistNameLabel.text = viewModel.artistName
         playSong(previewUrl: viewModel.previewUrl)
+        monitorStartTime()
         observeCurrentTime()
         playOrPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+        miniPlayOrPauseButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
         
         let string600 = viewModel.iconUrlString?.replacingOccurrences(of: "100x100", with: "600x600")
         guard let url = URL(string: string600 ?? "") else { return }
@@ -140,6 +136,14 @@ class SongPlayer: UIView {
         let playerItem = AVPlayerItem(url: url)
         player.replaceCurrentItem(with: playerItem)
         player.play()
+    }
+    
+    func monitorStartTime() {
+        let time = CMTimeMake(value: 1, timescale: 3)
+        let times = [NSValue(time: time)]
+        player.addBoundaryTimeObserver(forTimes: times, queue: .main) { [weak self] in
+            self?.bigSongIamge()
+        }
     }
     
     func observeCurrentTime() {
@@ -159,6 +163,5 @@ class SongPlayer: UIView {
         let duration = CMTimeGetSeconds(player.currentItem?.duration ?? CMTimeMake(value: 1, timescale: 1))
         let percentage = currentTime / duration
         self.songPlayerSlider.value = Float(percentage)
-        
     }
 }

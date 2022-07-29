@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -15,7 +14,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FUY-oc-byi">
+                <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FUY-oc-byi">
                     <rect key="frame" x="0.0" y="44" width="414" height="64"/>
                     <subviews>
                         <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Bl-ih-H74">
@@ -47,7 +46,7 @@
                                     </constraints>
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="  "/>
+                                    <buttonConfiguration key="configuration" style="plain" image="play" catalog="system" title="  "/>
                                     <connections>
                                         <action selector="playOrPausePressed:" destination="2vb-QU-srR" eventType="touchUpInside" id="WiO-JT-wca"/>
                                     </connections>
@@ -152,10 +151,10 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fxF-AV-UNG">
-                                    <rect key="frame" x="118" y="69" width="118" height="57"/>
+                                    <rect key="frame" x="118" y="68" width="118" height="59"/>
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                    <state key="normal" title=" " image="pause">
+                                    <state key="normal" title=" " image="play">
                                         <color key="titleColor" red="0.071789442889999999" green="0.071789442889999999" blue="0.071789442889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </state>
                                     <connections>
@@ -244,7 +243,8 @@
         <image name="Left" width="34" height="20"/>
         <image name="Right" width="34" height="20"/>
         <image name="launch" width="1024" height="1024"/>
-        <image name="pause" width="57" height="57"/>
+        <image name="play" catalog="system" width="120" height="128"/>
+        <image name="play" width="59" height="59"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

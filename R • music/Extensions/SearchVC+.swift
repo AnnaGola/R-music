@@ -33,7 +33,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cellViewModel = searchViewModel.cells[indexPath.row]
         
-        tabBarDelegate?.maxSizeSongPlayer(viewModel: cellViewModel)
+        self.tabBarDelegate?.maxSizeSongPlayer(viewModel: cellViewModel)
     }
 }
 
@@ -68,12 +68,12 @@ extension SearchViewController: PlayAnotherSong {
             }
         } else {
             nextIndexPath = IndexPath(row: indexPath.row - 1, section: indexPath.section)
-            if nextIndexPath.row == 0 {
+            if nextIndexPath.row == -1 {
                 nextIndexPath.row = searchViewModel.cells.count - 1
             }
         }
         table.selectRow(at: nextIndexPath, animated: true, scrollPosition: .none)
-        let cellViewModel = searchViewModel.cells[indexPath.row]
+        let cellViewModel = searchViewModel.cells[nextIndexPath.row]
         
         return cellViewModel
     }

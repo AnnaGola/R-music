@@ -10,7 +10,6 @@ import UIKit
 
 class SearchViewController: UIViewController, SearchDisplayLogic {
   
-    
 //MARK: - Properties
     
     var interactor: SearchBusinessLogic?
@@ -21,7 +20,11 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     lazy var loader = Loader()
     weak var tabBarDelegate: TabBarControllerDelegate?
     
+//MARK: - Outlets
+    
     @IBOutlet weak var table: UITableView!
+
+//MARK: - Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
