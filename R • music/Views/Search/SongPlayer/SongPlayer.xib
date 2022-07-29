@@ -14,16 +14,12 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VFr-0W-eXO">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
                 <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FUY-oc-byi">
                     <rect key="frame" x="0.0" y="44" width="414" height="64"/>
                     <subviews>
-                        <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Bl-ih-H74">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="1"/>
-                            <color key="backgroundColor" red="0.79820644860000001" green="0.64039605860000004" blue="0.55292296409999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="1" id="Jr4-eU-wWt"/>
-                            </constraints>
-                        </view>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="aD9-OM-Pxv">
                             <rect key="frame" x="8" y="8" width="398" height="48"/>
                             <subviews>
@@ -36,7 +32,7 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="song name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ze9-Fo-g6w">
                                     <rect key="frame" x="64" y="0.0" width="270" height="48"/>
                                     <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="18"/>
-                                    <nil key="textColor"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFT-Zd-IuJ">
@@ -44,7 +40,7 @@
                                     <constraints>
                                         <constraint firstAttribute="width" constant="48" id="clY-z7-RnZ"/>
                                     </constraints>
-                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" image="play" catalog="system" title="  "/>
                                     <connections>
@@ -62,10 +58,7 @@
                     <constraints>
                         <constraint firstItem="aD9-OM-Pxv" firstAttribute="leading" secondItem="FUY-oc-byi" secondAttribute="leading" constant="8" id="6sF-mG-X5p"/>
                         <constraint firstAttribute="height" constant="64" id="BY3-1z-dRa"/>
-                        <constraint firstItem="1Bl-ih-H74" firstAttribute="leading" secondItem="FUY-oc-byi" secondAttribute="leading" id="FVB-Yc-rMK"/>
                         <constraint firstAttribute="trailing" secondItem="aD9-OM-Pxv" secondAttribute="trailing" constant="8" id="Jye-Kj-7V7"/>
-                        <constraint firstItem="1Bl-ih-H74" firstAttribute="top" secondItem="FUY-oc-byi" secondAttribute="top" id="Qtd-eV-V9k"/>
-                        <constraint firstAttribute="trailing" secondItem="1Bl-ih-H74" secondAttribute="trailing" id="YhN-9H-mfy"/>
                         <constraint firstAttribute="bottom" secondItem="aD9-OM-Pxv" secondAttribute="bottom" constant="8" id="q4T-Rt-cAb"/>
                         <constraint firstItem="aD9-OM-Pxv" firstAttribute="top" secondItem="FUY-oc-byi" secondAttribute="top" constant="8" id="sY9-Kf-qAZ"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="64" id="wWd-Jb-IRd"/>
@@ -106,13 +99,13 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szq-tL-Rfc">
                                             <rect key="frame" x="0.0" y="0.0" width="177" height="30"/>
                                             <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="15"/>
-                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:30" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5l-H6-UX2">
                                             <rect key="frame" x="177" y="0.0" width="177" height="30"/>
                                             <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="15"/>
-                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -125,13 +118,13 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="maf-XJ-yhx">
                                     <rect key="frame" x="0.0" y="0.0" width="354" height="29"/>
                                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="25"/>
-                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Qw-oq-q1e">
                                     <rect key="frame" x="0.0" y="34" width="354" height="29"/>
                                     <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="25"/>
-                                    <color key="textColor" red="0.5000602645103378" green="0.40064528961742446" blue="0.34800211165889866" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="textColor" red="0.80210417509999998" green="0.64039891959999995" blue="0.55292284489999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -141,7 +134,7 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wh3-hZ-LkG">
                                     <rect key="frame" x="0.0" y="87.5" width="118" height="20"/>
-                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" title="   " image="Left">
                                         <color key="titleColor" red="0.071789442889999999" green="0.071789442889999999" blue="0.071789442889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -152,7 +145,7 @@
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fxF-AV-UNG">
                                     <rect key="frame" x="118" y="68" width="118" height="59"/>
-                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" title=" " image="play">
                                         <color key="titleColor" red="0.071789442889999999" green="0.071789442889999999" blue="0.071789442889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -163,7 +156,7 @@
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44L-dz-DBf">
                                     <rect key="frame" x="236" y="87.5" width="118" height="20"/>
-                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                     <state key="normal" title=" " image="Right">
                                         <color key="titleColor" red="0.071789442889999999" green="0.071789442889999999" blue="0.071789442889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -187,7 +180,7 @@
                                 </imageView>
                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="dWG-uf-Xpr">
                                     <rect key="frame" x="25" y="0.0" width="304" height="18"/>
-                                    <color key="minimumTrackTintColor" red="0.50006026449999996" green="0.40064528960000001" blue="0.34800211170000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="minimumTrackTintColor" red="0.79820644860000001" green="0.64039605860000004" blue="0.55292296409999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <connections>
                                         <action selector="volumeSliderChanged:" destination="2vb-QU-srR" eventType="valueChanged" id="pmc-yx-w6X"/>
                                     </connections>
@@ -209,16 +202,21 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="Gh2-x7-Egw" firstAttribute="bottom" secondItem="zp7-D3-v41" secondAttribute="bottom" constant="30" id="FVS-71-eCE"/>
+                <constraint firstAttribute="bottom" secondItem="VFr-0W-eXO" secondAttribute="bottom" id="Fu6-3H-Yrr"/>
+                <constraint firstItem="VFr-0W-eXO" firstAttribute="trailing" secondItem="Gh2-x7-Egw" secondAttribute="trailing" id="O3C-x1-fpG"/>
                 <constraint firstItem="FUY-oc-byi" firstAttribute="top" secondItem="Gh2-x7-Egw" secondAttribute="top" id="hQ1-HL-MVO"/>
+                <constraint firstItem="VFr-0W-eXO" firstAttribute="top" secondItem="2vb-QU-srR" secondAttribute="top" id="hs2-Ta-1fT"/>
                 <constraint firstItem="Gh2-x7-Egw" firstAttribute="trailing" secondItem="zp7-D3-v41" secondAttribute="trailing" constant="30" id="iId-pB-O2C"/>
                 <constraint firstItem="zp7-D3-v41" firstAttribute="top" secondItem="Gh2-x7-Egw" secondAttribute="top" id="nC0-EM-9Sv"/>
                 <constraint firstItem="FUY-oc-byi" firstAttribute="leading" secondItem="Gh2-x7-Egw" secondAttribute="leading" id="uSn-Ak-BFB"/>
                 <constraint firstItem="Gh2-x7-Egw" firstAttribute="trailing" secondItem="FUY-oc-byi" secondAttribute="trailing" id="uZp-dF-Jmz"/>
+                <constraint firstItem="VFr-0W-eXO" firstAttribute="leading" secondItem="Gh2-x7-Egw" secondAttribute="leading" id="vuf-8d-SbY"/>
                 <constraint firstItem="zp7-D3-v41" firstAttribute="leading" secondItem="Gh2-x7-Egw" secondAttribute="leading" constant="30" id="yis-zx-krm"/>
             </constraints>
             <connections>
                 <outlet property="allTimeLabel" destination="O5l-H6-UX2" id="oFL-JV-J77"/>
                 <outlet property="artistNameLabel" destination="7Qw-oq-q1e" id="HV7-R3-HDG"/>
+                <outlet property="backgroundImageView" destination="VFr-0W-eXO" id="nrn-PY-vWU"/>
                 <outlet property="currentTimeLabel" destination="szq-tL-Rfc" id="kJW-wt-4aJ"/>
                 <outlet property="maxStackView" destination="zp7-D3-v41" id="9Ys-M7-2uh"/>
                 <outlet property="maxVolumeImageView" destination="LfJ-Wj-vil" id="yID-kj-Pl8"/>

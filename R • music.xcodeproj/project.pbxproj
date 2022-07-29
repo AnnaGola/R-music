@@ -35,6 +35,7 @@
 		AF1A7F47288EF53000CDA821 /* CMTime+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7F46288EF53000CDA821 /* CMTime+.swift */; };
 		AF1A7F49288F1C8B00CDA821 /* PlayAnotherSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7F48288F1C8B00CDA821 /* PlayAnotherSong.swift */; };
 		AFA6C0412894185900318D05 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6C0402894185900318D05 /* Playlist.swift */; };
+		AFA6C043289433E300318D05 /* UIImageView + Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6C042289433E300318D05 /* UIImageView + Blur.swift */; };
 		AFDE0F502891932D00759ED7 /* UIView extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDE0F4F2891932D00759ED7 /* UIView extension.swift */; };
 		AFDE0F52289197DB00759ED7 /* TabBarControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDE0F51289197DB00759ED7 /* TabBarControllerDelegate.swift */; };
 		D13D58B1B52E5160ED326786 /* Pods_R___music.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E65505FC8F857FF99CD22349 /* Pods_R___music.framework */; };
@@ -72,6 +73,7 @@
 		AF1A7F46288EF53000CDA821 /* CMTime+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMTime+.swift"; sourceTree = "<group>"; };
 		AF1A7F48288F1C8B00CDA821 /* PlayAnotherSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayAnotherSong.swift; sourceTree = "<group>"; };
 		AFA6C0402894185900318D05 /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
+		AFA6C042289433E300318D05 /* UIImageView + Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Blur.swift"; sourceTree = "<group>"; };
 		AFDE0F4F2891932D00759ED7 /* UIView extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView extension.swift"; sourceTree = "<group>"; };
 		AFDE0F51289197DB00759ED7 /* TabBarControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarControllerDelegate.swift; sourceTree = "<group>"; };
 		C1B250B1099BAB02776D404D /* Pods-R • music.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-R • music.release.xcconfig"; path = "Target Support Files/Pods-R • music/Pods-R • music.release.xcconfig"; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				AF1A7EF6288C300D00CDA821 /* SearchVC+.swift */,
 				AF1A7F46288EF53000CDA821 /* CMTime+.swift */,
 				AFDE0F4F2891932D00759ED7 /* UIView extension.swift */,
+				AFA6C042289433E300318D05 /* UIImageView + Blur.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				AF1A7EED288BFEA800CDA821 /* SearchViewController.swift in Sources */,
 				AF1A7F08288D817800CDA821 /* SearchDisplayLogic.swift in Sources */,
 				AF1A7F0D288D87D900CDA821 /* SearchPresentationLogic.swift in Sources */,
+				AFA6C043289433E300318D05 /* UIImageView + Blur.swift in Sources */,
 				AF1A7EEB288BFEA800CDA821 /* SearchRouter.swift in Sources */,
 				AF1A7F22288DDC3D00CDA821 /* SongPalyer.swift in Sources */,
 				AF1A7EEC288BFEA800CDA821 /* SearchModels.swift in Sources */,

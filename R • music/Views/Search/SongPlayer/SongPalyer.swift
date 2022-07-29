@@ -13,6 +13,7 @@ class SongPlayer: UIView {
 
 //MARK: - Outlets
     
+    @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var miniSongPlayer: UIView!
     @IBOutlet weak var miniNameOfTheSong: UILabel!
     @IBOutlet weak var miniImageOfTheSong: UIImageView!
@@ -87,6 +88,7 @@ class SongPlayer: UIView {
         songPlayerSlider.maximumTrackTintColor = .systemGray4
         songPlayerSlider.minimumTrackTintColor = .systemGray2
         setupGestures()
+        backgroundImageView.blurBackgroung(style: .dark)
     }
     
     func playSong(previewUrl: String?) {
@@ -169,6 +171,10 @@ class SongPlayer: UIView {
         guard let url = URL(string: string600 ?? "") else { return }
         miniImageOfTheSong.sd_setImage(with: url)
         songImageView.sd_setImage(with: url)
+        
+        let string8 = viewModel.iconUrlString?.replacingOccurrences(of: "100x100", with: "8x8")
+        guard let url = URL(string: string8 ?? "") else { return }
+        backgroundImageView.sd_setImage(with: url)
     }
     
     
@@ -197,9 +203,9 @@ class SongPlayer: UIView {
     func paningChanged(gesture: UIPanGestureRecognizer) {
         let translation = gesture.translation(in: self.superview)
         self.transform = CGAffineTransform(translationX: 0, y: translation.y)
-        let newTransperancy = 1 + translation.y / 250
+        let newTransperancy = 1 + translation.y / 50
         self.miniSongPlayer.alpha = newTransperancy < 0 ? 0 : newTransperancy
-        self.maxStackView.alpha = -translation.y / 250
+        self.maxStackView.alpha = -translation.y / 50
     }
     
     func paningEnded(gesture: UIPanGestureRecognizer) {
@@ -208,7 +214,7 @@ class SongPlayer: UIView {
         
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 1, options: .curveEaseInOut) {
             self.transform = .identity
-            if tranlation.y < -250 && velocity.y < -500 {
+            if tranlation.y < -25 && velocity.y < -50 {
                 self.tabBarDelegate?.maxSizeSongPlayer(viewModel: nil)
             } else {
                 self.miniSongPlayer.alpha = 1

@@ -33,8 +33,8 @@ class TabBarController: UITabBarController {
         let hostVC = UIHostingController(rootView: playlist)
         
         viewControllers = [
+            hostVC,
             createVC(rootVC: searchVC, image: #imageLiteral(resourceName: "search") , title: "Search"),
-            hostVC
         ]
     }
     

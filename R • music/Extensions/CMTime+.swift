@@ -10,7 +10,6 @@ import CoreMedia
 import AVKit
 
 extension CMTime {
-    
     func createString() -> String {
         guard !CMTimeGetSeconds(self).isNaN else { return "" }
         let totalSeconds = Int(CMTimeGetSeconds(self))

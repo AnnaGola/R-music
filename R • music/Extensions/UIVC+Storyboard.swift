@@ -8,7 +8,6 @@
 import UIKit
 
 extension UIViewController {
-    
     class func loadFromStoryboard<T: UIViewController>() -> T {
         
         let name = String(describing: T.self)
