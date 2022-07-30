@@ -32,7 +32,7 @@ class TrackCell: UITableViewCell {
 //MARK: - Properties
     
     var cell: SearchViewModel.Cell?
-    
+    let userDefaults = UserDefaults.standard
     
 //MARK: - Methods
     
@@ -47,9 +47,18 @@ class TrackCell: UITableViewCell {
     
     func setCell(viewModel: SearchViewModel.Cell) {
         
-        let savedSongs = UserDefaults.standard.savedSong()
-        
         self.cell = viewModel
+        
+        let savedSongs = userDefaults.savedSong()
+        let isAdded = savedSongs.firstIndex(where: {
+            $0.trackName == self.cell?.trackName && $0.artistName == self.cell?.artistName }) != nil
+        
+        if isAdded {
+            addButton.isHidden = true
+        } else {
+            addButton.isHidden = false
+        }
+        
         songNameLabel.text = viewModel.trackName
         artistNameLabel.text = viewModel.artistName
         albumNameLabel.text = viewModel.collectionName
@@ -59,7 +68,6 @@ class TrackCell: UITableViewCell {
     }
     
     func savingSong() {
-        let userDefaults = UserDefaults.standard
         guard let cell = cell else { return }
         var listOfSongs = userDefaults.savedSong()
         addButton.isHidden = true
