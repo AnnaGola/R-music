@@ -15,7 +15,6 @@
 		AF1A7EDC288B339200CDA821 /* TrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7EDB288B339200CDA821 /* TrackModel.swift */; };
 		AF1A7EE0288BF73400CDA821 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7EDF288BF73400CDA821 /* NetworkService.swift */; };
 		AF1A7EE9288BFEA800CDA821 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7EE2288BFEA800CDA821 /* SearchPresenter.swift */; };
-		AF1A7EEA288BFEA800CDA821 /* SearchWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7EE3288BFEA800CDA821 /* SearchWorker.swift */; };
 		AF1A7EEB288BFEA800CDA821 /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7EE4288BFEA800CDA821 /* SearchRouter.swift */; };
 		AF1A7EEC288BFEA800CDA821 /* SearchModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7EE5288BFEA800CDA821 /* SearchModels.swift */; };
 		AF1A7EED288BFEA800CDA821 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7EE6288BFEA800CDA821 /* SearchViewController.swift */; };
@@ -36,6 +35,7 @@
 		AF1A7F49288F1C8B00CDA821 /* PlayAnotherSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7F48288F1C8B00CDA821 /* PlayAnotherSong.swift */; };
 		AFA6C043289433E300318D05 /* UIImageView + Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6C042289433E300318D05 /* UIImageView + Blur.swift */; };
 		AFA6C04B2894594D00318D05 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6C04A2894594D00318D05 /* Playlist.swift */; };
+		AFA6C04D289472BE00318D05 /* SearchWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6C04C289472BD00318D05 /* SearchWorker.swift */; };
 		AFDE0F502891932D00759ED7 /* UIView extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDE0F4F2891932D00759ED7 /* UIView extension.swift */; };
 		AFDE0F52289197DB00759ED7 /* TabBarControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDE0F51289197DB00759ED7 /* TabBarControllerDelegate.swift */; };
 		D13D58B1B52E5160ED326786 /* Pods_R___music.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E65505FC8F857FF99CD22349 /* Pods_R___music.framework */; };
@@ -53,7 +53,6 @@
 		AF1A7EDB288B339200CDA821 /* TrackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackModel.swift; sourceTree = "<group>"; };
 		AF1A7EDF288BF73400CDA821 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		AF1A7EE2288BFEA800CDA821 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
-		AF1A7EE3288BFEA800CDA821 /* SearchWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWorker.swift; sourceTree = "<group>"; };
 		AF1A7EE4288BFEA800CDA821 /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
 		AF1A7EE5288BFEA800CDA821 /* SearchModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModels.swift; sourceTree = "<group>"; };
 		AF1A7EE6288BFEA800CDA821 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +73,7 @@
 		AF1A7F48288F1C8B00CDA821 /* PlayAnotherSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayAnotherSong.swift; sourceTree = "<group>"; };
 		AFA6C042289433E300318D05 /* UIImageView + Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Blur.swift"; sourceTree = "<group>"; };
 		AFA6C04A2894594D00318D05 /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
+		AFA6C04C289472BD00318D05 /* SearchWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWorker.swift; sourceTree = "<group>"; };
 		AFDE0F4F2891932D00759ED7 /* UIView extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView extension.swift"; sourceTree = "<group>"; };
 		AFDE0F51289197DB00759ED7 /* TabBarControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarControllerDelegate.swift; sourceTree = "<group>"; };
 		C1B250B1099BAB02776D404D /* Pods-R • music.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-R • music.release.xcconfig"; path = "Target Support Files/Pods-R • music/Pods-R • music.release.xcconfig"; sourceTree = "<group>"; };
@@ -141,8 +141,8 @@
 				AF1A7EE7288BFEA800CDA821 /* SearchInteractor.swift */,
 				AF1A7EE2288BFEA800CDA821 /* SearchPresenter.swift */,
 				AF1A7EE5288BFEA800CDA821 /* SearchModels.swift */,
-				AF1A7EE3288BFEA800CDA821 /* SearchWorker.swift */,
 				AF1A7EE4288BFEA800CDA821 /* SearchRouter.swift */,
+				AFA6C04C289472BD00318D05 /* SearchWorker.swift */,
 				AF1A7EFB288D262000CDA821 /* Cell */,
 				AF1A7F09288D81E600CDA821 /* ActivityIndicator */,
 				AF1A7F10288DA47C00CDA821 /* SongPlayer */,
@@ -390,13 +390,13 @@
 				AF1A7F0F288D881900CDA821 /* SearchBusinessLogic.swift in Sources */,
 				AFA6C04B2894594D00318D05 /* Playlist.swift in Sources */,
 				AF1A7F49288F1C8B00CDA821 /* PlayAnotherSong.swift in Sources */,
+				AFA6C04D289472BE00318D05 /* SearchWorker.swift in Sources */,
 				AFDE0F502891932D00759ED7 /* UIView extension.swift in Sources */,
 				AF1A7F0B288D823000CDA821 /* Loader.swift in Sources */,
 				AF1A7ED6288B135800CDA821 /* TabBarController.swift in Sources */,
 				AF1A7EEE288BFEA800CDA821 /* SearchInteractor.swift in Sources */,
 				AF1A7EC2288B131300CDA821 /* AppDelegate.swift in Sources */,
 				AF1A7EDC288B339200CDA821 /* TrackModel.swift in Sources */,
-				AF1A7EEA288BFEA800CDA821 /* SearchWorker.swift in Sources */,
 				AF1A7F47288EF53000CDA821 /* CMTime+.swift in Sources */,
 				AF1A7EED288BFEA800CDA821 /* SearchViewController.swift in Sources */,
 				AF1A7F08288D817800CDA821 /* SearchDisplayLogic.swift in Sources */,

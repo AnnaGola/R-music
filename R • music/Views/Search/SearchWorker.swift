@@ -2,12 +2,11 @@
 //  SearchWorker.swift
 //  R • music
 //
-//  Created by anna on 23.07.2022.
-//  Copyright (c) 2022. All rights reserved.
+//  Created by anna on 29.07.2022.
 //
 
 import UIKit
 
 class SearchWorker {
-
+    
 }

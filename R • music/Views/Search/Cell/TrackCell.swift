@@ -55,10 +55,19 @@ class TrackCell: UITableViewCell {
     }
     
     func savingSong() {
+        let userDefaults = UserDefaults.standard
+        guard let cell = cell else { return }
+        var listOfSongs = [SearchViewModel.Cell]()
         
-        if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: cell, requiringSecureCoding: false) {
-            let defaults = UserDefaults.standard
-            defaults.set(savedData, forKey: "song")
+        if let savedSong = userDefaults.object(forKey: "song") as? Data {
+            if let decodedSongs = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedSong) as? [SearchViewModel.Cell] {
+                listOfSongs = decodedSongs
+            }
+        }
+        listOfSongs.append(cell)
+        
+        if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: listOfSongs, requiringSecureCoding: false) {
+            userDefaults.set(savedData, forKey: "song")
         }
     }
 }
