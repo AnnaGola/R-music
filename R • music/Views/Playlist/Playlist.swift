@@ -6,8 +6,12 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct Playlist: View {
+    
+    var songs = UserDefaults.standard.savedSong()
+    
     var body: some View {
         NavigationView {
             VStack(spacing: 30) {
@@ -34,9 +38,9 @@ struct Playlist: View {
                 }
             }.padding().frame(height: 50)
                 Divider().padding(.leading).padding(.trailing)
-                //Spacer()
-                List {
-                    PlaylistCell()
+                
+                List(songs) { song in
+                    PlaylistCell(cell: song)
                 }
             }
             .navigationBarTitle("Playlist")
@@ -45,12 +49,15 @@ struct Playlist: View {
 }
 
 struct PlaylistCell: View {
+    
+    var cell: SearchViewModel.Cell
+    
     var body: some View {
         HStack(spacing: 16) {
-            Image("library").resizable().frame(width: 60, height: 60).cornerRadius(3)
-            VStack {
-                Text("Track name")
-                Text("Artist name")
+            URLImage(url: (URL(string: cell.iconUrlString ?? "")!).resizable().frame(width: 60, height: 60).cornerRadius(3)
+                     content: VStack(alignment: .leading) {
+                Text("\(cell.trackName)")
+                Text("\(cell.artistName)")
             }
         }
     }

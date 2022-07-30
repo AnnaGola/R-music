@@ -34,6 +34,7 @@
 		AF1A7F47288EF53000CDA821 /* CMTime+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7F46288EF53000CDA821 /* CMTime+.swift */; };
 		AF1A7F49288F1C8B00CDA821 /* PlayAnotherSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A7F48288F1C8B00CDA821 /* PlayAnotherSong.swift */; };
 		AF642EE52895B7E000A92A2E /* UserDefaults+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF642EE42895B7E000A92A2E /* UserDefaults+.swift */; };
+		AF642EE82895BE6900A92A2E /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = AF642EE72895BE6900A92A2E /* URLImage */; };
 		AFA6C043289433E300318D05 /* UIImageView + Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6C042289433E300318D05 /* UIImageView + Blur.swift */; };
 		AFA6C04B2894594D00318D05 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6C04A2894594D00318D05 /* Playlist.swift */; };
 		AFA6C04D289472BE00318D05 /* SearchWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6C04C289472BD00318D05 /* SearchWorker.swift */; };
@@ -87,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF642EE82895BE6900A92A2E /* URLImage in Frameworks */,
 				D13D58B1B52E5160ED326786 /* Pods_R___music.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,6 +293,9 @@
 			dependencies = (
 			);
 			name = "R • music";
+			packageProductDependencies = (
+				AF642EE72895BE6900A92A2E /* URLImage */,
+			);
 			productName = "R • music";
 			productReference = AF1A7EBE288B131300CDA821 /* R • music.app */;
 			productType = "com.apple.product-type.application";
@@ -319,6 +324,9 @@
 				Base,
 			);
 			mainGroup = AF1A7EB5288B131300CDA821;
+			packageReferences = (
+				AF642EE62895BE6900A92A2E /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = AF1A7EBF288B131300CDA821 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -630,6 +638,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AF642EE62895BE6900A92A2E /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AF642EE72895BE6900A92A2E /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF642EE62895BE6900A92A2E /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AF1A7EB6288B131300CDA821 /* Project object */;
 }
