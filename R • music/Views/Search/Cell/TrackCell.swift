@@ -20,6 +20,8 @@ class TrackCell: UITableViewCell {
     @IBOutlet weak var songNameLabel: UILabel!
     @IBOutlet weak var artistNameLabel: UILabel!
     @IBOutlet weak var albumNameLabel: UILabel!
+    @IBOutlet weak var addButton: UIButton!
+
    
 //MARK: - Actions
     
@@ -45,6 +47,8 @@ class TrackCell: UITableViewCell {
     
     func setCell(viewModel: SearchViewModel.Cell) {
         
+        let savedSongs = UserDefaults.standard.savedSong()
+        
         self.cell = viewModel
         songNameLabel.text = viewModel.trackName
         artistNameLabel.text = viewModel.artistName
@@ -57,17 +61,13 @@ class TrackCell: UITableViewCell {
     func savingSong() {
         let userDefaults = UserDefaults.standard
         guard let cell = cell else { return }
-        var listOfSongs = [SearchViewModel.Cell]()
+        var listOfSongs = userDefaults.savedSong()
+        addButton.isHidden = true
         
-        if let savedSong = userDefaults.object(forKey: "song") as? Data {
-            if let decodedSongs = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedSong) as? [SearchViewModel.Cell] {
-                listOfSongs = decodedSongs
-            }
-        }
         listOfSongs.append(cell)
         
         if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: listOfSongs, requiringSecureCoding: false) {
-            userDefaults.set(savedData, forKey: "song")
+            userDefaults.set(savedData, forKey: UserDefaults.addedKeySong)
         }
     }
 }

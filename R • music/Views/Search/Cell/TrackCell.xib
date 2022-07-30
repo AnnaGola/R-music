@@ -63,6 +63,7 @@
                 </subviews>
             </tableViewCellContentView>
             <connections>
+                <outlet property="addButton" destination="Os2-o9-ehO" id="xT6-pO-NFD"/>
                 <outlet property="albumNameLabel" destination="kkd-TJ-D20" id="MAs-Kq-G52"/>
                 <outlet property="artistNameLabel" destination="I5z-Cz-hbP" id="QgZ-UC-OfU"/>
                 <outlet property="songNameLabel" destination="qNJ-Op-EVz" id="vIf-7j-tcu"/>
