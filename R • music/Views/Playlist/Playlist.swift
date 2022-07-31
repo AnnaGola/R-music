@@ -54,8 +54,9 @@ struct PlaylistCell: View {
     
     var body: some View {
         HStack(spacing: 16) {
-            URLImage(url: (URL(string: cell.iconUrlString ?? "")!).resizable().frame(width: 60, height: 60).cornerRadius(3)
-                     content: VStack(alignment: .leading) {
+            //URLImage(url: (URL(string: cell.iconUrlString ?? "")!))
+                //.resizable().frame(width: 60, height: 60).cornerRadius(3)
+                        VStack(alignment: .leading) {
                 Text("\(cell.trackName)")
                 Text("\(cell.artistName)")
             }
