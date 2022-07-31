@@ -12,7 +12,7 @@
 
 ## LaunchScreen и Архитектура проекта
 
-<img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202022-07-26%20at%2021.30.09.png" width="160">  <img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Снимок%20экрана%202022-07-26%20в%2020.29.45.png" width="174.5">  <img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Снимок%20экрана%202022-07-26%20в%2020.31.16.png" width="184">
+<img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202022-07-31%20at%2021.26.45.png" width="160">  <img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Снимок%20экрана%202022-07-31%20в%2021.37.35.png" width="177.5">  <img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Снимок%20экрана%202022-07-31%20в%2021.37.00.png" width="175.1">
 
 ## Главный экран
 
@@ -37,7 +37,7 @@ func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 
 Если скорость интернета низкая, то в первую очередь при прогрузке всей таблицы, картинки, которые еще не кэшированы благодаря Alamofire, будут подгружаться в дефолтном цвете приложения и только потом асинхронно загрузятся все остольные изображения.
 
-<img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202022-07-26%20at%2021.30.41.png" width="160">  <img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202022-07-26%20at%2021.31.05.png" width="160">   <img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202022-07-26%20at%2020.40.03.png" width="160">  <img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202022-07-26%20at%2020.40.07.png" width="160">
+<img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202022-07-31%20at%2021.27.31.png" width="160">  <img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202022-07-31%20at%2021.27.43.png" width="160">   <img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202022-07-31%20at%2021.27.47.png" width="160"> 
 
 ## Плеер
 
@@ -48,7 +48,6 @@ func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
 ```swift
 UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseInOut)
 ```
-Так же цвет кнопок, текста и цвета слайдера с аудиодорожкой будут меняться в зависимости от оттенка фона:
 
- <img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202022-07-25%20at%2019.48.16.png" width="160">   <img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202022-07-25%20at%2019.42.20.png" width="160">
+ <img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202022-07-31%20at%2021.27.59.png" width="160">   <img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202022-07-31%20at%2021.33.07.png" width="160">    <img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202022-07-31%20at%2021.28.53.png" width="160">    <img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202022-07-31%20at%2021.28.38.png" width="160"> 
  
