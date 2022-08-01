@@ -89,7 +89,7 @@ class SongPlayer: UIView {
         songPlayerSlider.minimumTrackTintColor = .systemGray2
         setupGestures()
         backgroundImageView.blurBackgroung(style: .dark)
-        maskImageView.addLayer(color: .black, opacity: 40, offSet: .zero, radius: 10, scale: true)
+        maskImageView.addLayer(color: .black, opacity: 5, offSet: .zero, radius: 20, scale: true)
         songImageView.addRadius(cornerRadius: 5)
         maxStackView.insertSubview(maskImageView, at: 0)
     }
@@ -196,13 +196,13 @@ class SongPlayer: UIView {
 
         switch gesture.state {
         case .began:
-            maskImageView.alpha = 0
+            maskImageView.alpha = 1
         case .changed:
             paningChanged(gesture: gesture)
         case .ended:
             paningEnded(gesture: gesture)
         @unknown default:
-            print("default state in padding")
+            print("default state in padding went wrong")
         }
     }
     

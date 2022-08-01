@@ -14,9 +14,9 @@ class TabBarController: UITabBarController {
     
     let songPlayer: SongPlayer = SongPlayer.loadSongPlayer()
     let searchVC: SearchViewController = SearchViewController.loadFromStoryboard()
-    private var minTopAnchor: NSLayoutConstraint!
-    private var maxTopAnchor: NSLayoutConstraint!
-    private var bottomAnchor: NSLayoutConstraint!
+    var minTopAnchor: NSLayoutConstraint!
+    var maxTopAnchor: NSLayoutConstraint!
+    var bottomAnchor: NSLayoutConstraint!
     
     
 //MARK: - Methods
@@ -67,47 +67,5 @@ class TabBarController: UITabBarController {
         
         bottomAnchor.isActive = true
         maxTopAnchor.isActive = true
-    }
-}
-
-extension TabBarController: TabBarControllerDelegate {
-    
-    func maxSizeSongPlayer(viewModel: SearchViewModel.Cell?) {
-        minTopAnchor.isActive = false
-        maxTopAnchor.isActive = true
-        bottomAnchor.constant = 0
-        maxTopAnchor.constant = 0
-        
-        UIView.animate(withDuration: 0.5,
-                       delay: 0,
-                       usingSpringWithDamping: 0.8,
-                       initialSpringVelocity: 1,
-                       options: .curveEaseInOut) {
-            self.view.layoutIfNeeded()
-            self.tabBar.alpha = 0
-            self.songPlayer.miniSongPlayer.alpha = 0
-            self.songPlayer.maxStackView.alpha = 1
-            self.songPlayer.maskImageView.alpha = 1
-        }
-        guard let viewModel = viewModel else { return }
-        self.songPlayer.setPlayer(viewModel: viewModel)
-    }
-    
-    func minSizeSongPlayer() {
-        maxTopAnchor.isActive = false
-        bottomAnchor.constant = view.frame.height
-        minTopAnchor.isActive = true
-        
-        UIView.animate(withDuration: 0.5,
-                       delay: 0,
-                       usingSpringWithDamping: 0.8,
-                       initialSpringVelocity: 1,
-                       options: .curveEaseInOut) {
-            self.view.layoutIfNeeded()
-            self.tabBar.alpha = 1
-            self.songPlayer.miniSongPlayer.alpha = 1
-            self.songPlayer.maxStackView.alpha = 0
-            self.songPlayer.maskImageView.alpha = 0
-        }
     }
 }
