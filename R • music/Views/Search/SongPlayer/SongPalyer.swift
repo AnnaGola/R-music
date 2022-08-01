@@ -91,6 +91,7 @@ class SongPlayer: UIView {
         backgroundImageView.blurBackgroung(style: .dark)
         maskImageView.addLayer(color: .black, opacity: 40, offSet: .zero, radius: 10, scale: true)
         songImageView.addRadius(cornerRadius: 5)
+        maxStackView.insertSubview(maskImageView, at: 0)
     }
 
     
@@ -244,11 +245,11 @@ class SongPlayer: UIView {
                     self.tabBarDelegate?.minSizeSongPlayer()
                 }
             }
+            
         @unknown default:
             let translation = gesture.translation(in: self.superview)
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseInOut) {
                 self.maxStackView.transform = .identity
-                self.maxStackView.insertSubview(self.maskImageView, at: 0)
                 if translation.y > 100 {
                     self.tabBarDelegate?.minSizeSongPlayer()
                 }
