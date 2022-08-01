@@ -17,6 +17,9 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VFr-0W-eXO">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VsA-Oa-oik">
+                    <rect key="frame" x="30" y="99" width="354" height="353"/>
+                </imageView>
                 <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FUY-oc-byi">
                     <rect key="frame" x="0.0" y="44" width="414" height="64"/>
                     <subviews>
@@ -201,16 +204,20 @@
             <viewLayoutGuide key="safeArea" id="Gh2-x7-Egw"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="VsA-Oa-oik" firstAttribute="leading" secondItem="zp7-D3-v41" secondAttribute="leading" id="099-iQ-DZy"/>
                 <constraint firstItem="VFr-0W-eXO" firstAttribute="centerY" secondItem="2vb-QU-srR" secondAttribute="centerY" id="4XM-mf-gLX"/>
                 <constraint firstItem="Gh2-x7-Egw" firstAttribute="bottom" secondItem="zp7-D3-v41" secondAttribute="bottom" constant="30" id="FVS-71-eCE"/>
+                <constraint firstItem="Gh2-x7-Egw" firstAttribute="bottom" secondItem="VsA-Oa-oik" secondAttribute="bottom" constant="410" id="GkT-fE-5b4"/>
                 <constraint firstItem="VFr-0W-eXO" firstAttribute="trailing" secondItem="FUY-oc-byi" secondAttribute="trailing" id="MbB-ee-fh2"/>
                 <constraint firstItem="VFr-0W-eXO" firstAttribute="leading" secondItem="FUY-oc-byi" secondAttribute="leading" id="Qw6-iV-bQp"/>
+                <constraint firstItem="VsA-Oa-oik" firstAttribute="top" secondItem="Gh2-x7-Egw" secondAttribute="top" constant="55" id="T9N-rx-ADl"/>
                 <constraint firstItem="FUY-oc-byi" firstAttribute="top" secondItem="Gh2-x7-Egw" secondAttribute="top" id="hQ1-HL-MVO"/>
                 <constraint firstItem="Gh2-x7-Egw" firstAttribute="trailing" secondItem="zp7-D3-v41" secondAttribute="trailing" constant="30" id="iId-pB-O2C"/>
                 <constraint firstItem="zp7-D3-v41" firstAttribute="top" secondItem="Gh2-x7-Egw" secondAttribute="top" id="nC0-EM-9Sv"/>
                 <constraint firstItem="VFr-0W-eXO" firstAttribute="top" secondItem="2vb-QU-srR" secondAttribute="top" id="uBw-E8-mkQ"/>
                 <constraint firstItem="FUY-oc-byi" firstAttribute="leading" secondItem="Gh2-x7-Egw" secondAttribute="leading" id="uSn-Ak-BFB"/>
                 <constraint firstItem="Gh2-x7-Egw" firstAttribute="trailing" secondItem="FUY-oc-byi" secondAttribute="trailing" id="uZp-dF-Jmz"/>
+                <constraint firstItem="VsA-Oa-oik" firstAttribute="trailing" secondItem="zp7-D3-v41" secondAttribute="trailing" id="wQC-Op-zwI"/>
                 <constraint firstItem="zp7-D3-v41" firstAttribute="leading" secondItem="Gh2-x7-Egw" secondAttribute="leading" constant="30" id="yis-zx-krm"/>
             </constraints>
             <connections>
@@ -218,6 +225,7 @@
                 <outlet property="artistNameLabel" destination="7Qw-oq-q1e" id="HV7-R3-HDG"/>
                 <outlet property="backgroundImageView" destination="VFr-0W-eXO" id="nrn-PY-vWU"/>
                 <outlet property="currentTimeLabel" destination="szq-tL-Rfc" id="kJW-wt-4aJ"/>
+                <outlet property="maskImageView" destination="VsA-Oa-oik" id="ndD-B8-bAS"/>
                 <outlet property="maxStackView" destination="zp7-D3-v41" id="9Ys-M7-2uh"/>
                 <outlet property="maxVolumeImageView" destination="LfJ-Wj-vil" id="yID-kj-Pl8"/>
                 <outlet property="minVolumeImageView" destination="C9r-Z1-uge" id="bFj-XX-kPr"/>

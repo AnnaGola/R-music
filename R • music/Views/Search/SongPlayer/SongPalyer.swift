@@ -13,6 +13,7 @@ class SongPlayer: UIView {
 
 //MARK: - Outlets
     
+    @IBOutlet weak var maskImageView: UIImageView!
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var miniSongPlayer: UIView!
     @IBOutlet weak var miniNameOfTheSong: UILabel!
@@ -83,13 +84,15 @@ class SongPlayer: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        songImageView.layer.cornerRadius = 5
         songPlayerSlider.thumbTintColor = .gray
         songPlayerSlider.maximumTrackTintColor = .systemGray4
         songPlayerSlider.minimumTrackTintColor = .systemGray2
         setupGestures()
         backgroundImageView.blurBackgroung(style: .dark)
+        maskImageView.addLayer(color: .black, opacity: 40, offSet: .zero, radius: 10, scale: true)
+        songImageView.addRadius(cornerRadius: 5)
     }
+
     
     func playSong(previewUrl: String?) {
         guard let url = URL(string: previewUrl ?? "") else { return }
@@ -115,7 +118,6 @@ class SongPlayer: UIView {
             let currentDuration = ((duration ?? CMTimeMake(value: 1, timescale: 1)) - time).createString()
             self?.allTimeLabel.text = "\(currentDuration)"
             self?.updateTimeSlider()
-            
         }
     }
     
@@ -132,6 +134,7 @@ class SongPlayer: UIView {
     func bigSongIamge() {
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseInOut) {
             self.songImageView.transform = .identity
+            self.maskImageView.transform = .identity
         }
     }
     
@@ -139,6 +142,7 @@ class SongPlayer: UIView {
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseInOut) {
             let scale: CGFloat = 0.8
             self.songImageView.transform = CGAffineTransform(scaleX: scale, y: scale)
+            self.maskImageView.transform = CGAffineTransform(scaleX: scale, y: scale)
         }
     }
     
@@ -191,13 +195,13 @@ class SongPlayer: UIView {
 
         switch gesture.state {
         case .began:
-            print("")
+            maskImageView.alpha = 0
         case .changed:
             paningChanged(gesture: gesture)
         case .ended:
             paningEnded(gesture: gesture)
         @unknown default:
-            print("")
+            print("default state in padding")
         }
     }
     
@@ -230,16 +234,25 @@ class SongPlayer: UIView {
         case .changed:
             let translation = gesture.translation(in: self.superview)
             maxStackView.transform = CGAffineTransform(translationX: 0, y: translation.y)
+
         case .ended:
             let translation = gesture.translation(in: self.superview)
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseInOut) {
                 self.maxStackView.transform = .identity
+                
                 if translation.y > 100 {
                     self.tabBarDelegate?.minSizeSongPlayer()
                 }
             }
         @unknown default:
-            print("")
+            let translation = gesture.translation(in: self.superview)
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseInOut) {
+                self.maxStackView.transform = .identity
+                self.maxStackView.insertSubview(self.maskImageView, at: 0)
+                if translation.y > 100 {
+                    self.tabBarDelegate?.minSizeSongPlayer()
+                }
+            }
         }
     }
     

@@ -87,6 +87,7 @@ extension TabBarController: TabBarControllerDelegate {
             self.tabBar.alpha = 0
             self.songPlayer.miniSongPlayer.alpha = 0
             self.songPlayer.maxStackView.alpha = 1
+            self.songPlayer.maskImageView.alpha = 1
         }
         guard let viewModel = viewModel else { return }
         self.songPlayer.setPlayer(viewModel: viewModel)
@@ -106,6 +107,7 @@ extension TabBarController: TabBarControllerDelegate {
             self.tabBar.alpha = 1
             self.songPlayer.miniSongPlayer.alpha = 1
             self.songPlayer.maxStackView.alpha = 0
+            self.songPlayer.maskImageView.alpha = 0
         }
     }
 }
