@@ -76,7 +76,7 @@ class SongPlayer: UIView {
         return avPlayer
     }()
 
-    weak var delegate: PlayAnotherSong?
+    var delegate: PlayAnotherSong?
     weak var tabBarDelegate: TabBarControllerDelegate?
     
 

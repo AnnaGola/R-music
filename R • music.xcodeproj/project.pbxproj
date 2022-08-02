@@ -148,10 +148,10 @@
 			children = (
 				AF1A7EF1288C0A2A00CDA821 /* SearchViewController.storyboard */,
 				AF1A7EE6288BFEA800CDA821 /* SearchViewController.swift */,
+				AF1A7EE4288BFEA800CDA821 /* SearchRouter.swift */,
 				AF1A7EE7288BFEA800CDA821 /* SearchInteractor.swift */,
 				AF1A7EE2288BFEA800CDA821 /* SearchPresenter.swift */,
 				AF1A7EE5288BFEA800CDA821 /* SearchModels.swift */,
-				AF1A7EE4288BFEA800CDA821 /* SearchRouter.swift */,
 				AFA6C04C289472BD00318D05 /* SearchWorker.swift */,
 				AF1A7EFB288D262000CDA821 /* Cell */,
 				AF1A7F09288D81E600CDA821 /* ActivityIndicator */,

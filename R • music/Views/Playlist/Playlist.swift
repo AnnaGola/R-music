@@ -24,6 +24,7 @@ struct Playlist: View {
             VStack(spacing: 30) {
                 GeometryReader { geo in
                     HStack(spacing: 20) {
+                        
                         Button {
                             self.song = self.songs[0]
                             self.tabBarDelegate?.maxSizeSongPlayer(viewModel: self.song)
@@ -49,7 +50,20 @@ struct Playlist: View {
                 
                 List {
                     ForEach(songs) { song in
-                        PlaylistCell(cell: song)
+                        PlaylistCell(cell: song).simultaneousGesture(TapGesture().onEnded({ _ in
+                            let keyWindow = UIApplication.shared.connectedScenes
+                                .filter { $0.activationState == .foregroundActive }
+                                .map{ $0 as? UIWindowScene}
+                                .compactMap{ $0 }
+                                .first?.windows
+                                .filter({ $0.isKeyWindow }).first //stackOverFlow
+                            
+                            let tabBarVC = keyWindow?.rootViewController as? TabBarController
+                            tabBarVC?.songPlayer.delegate = self
+                            
+                            self.song = song
+                            self.tabBarDelegate?.maxSizeSongPlayer(viewModel: self.song)
+                        }))
                     }.onDelete(perform: deleteFromList)
                 }
             }
@@ -95,4 +109,3 @@ struct Playlist_Previews: PreviewProvider {
         Playlist()
     }
 }
-
