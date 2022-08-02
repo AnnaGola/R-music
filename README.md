@@ -4,8 +4,8 @@
 
 В этом проекте я использовала: 
 * CleanSwift архитектуру
-* UIKit / SwiftUI для разных экранов
-* Alamofire, SDWebImage, AVPlayer
+* UIKit / SwiftUI для разных экранов через UIHostingController
+* Alamofire, SDWebImage, URLImage, AVPlayer
 * UserDefaults для сохранения данных
 * Вёрстку в коде/ storyboard и XIB для кастомных ячеек
 * Adobe XD для иконок 
