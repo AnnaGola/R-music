@@ -27,8 +27,6 @@ class SongPlayer: UIView {
     @IBOutlet weak var songNameLabel: UILabel!
     @IBOutlet weak var artistNameLabel: UILabel!
     @IBOutlet weak var volumeSlider: UISlider!
-    @IBOutlet weak var minVolumeImageView: UIImageView!
-    @IBOutlet weak var maxVolumeImageView: UIImageView!
     @IBOutlet weak var playOrPauseButton: UIButton!
 
     
@@ -89,8 +87,8 @@ class SongPlayer: UIView {
         songPlayerSlider.minimumTrackTintColor = .systemGray2
         setupGestures()
         backgroundImageView.blurBackgroung(style: .dark)
-        maskImageView.addLayer(color: .black, opacity: 5, offSet: .zero, radius: 20, scale: true)
-        songImageView.addRadius(cornerRadius: 5)
+        maskImageView.addLayer(color: .black, opacity: 2, offSet: .zero, radius: 25, scale: true)
+        songImageView.addRadius(cornerRadius: 10)
         maxStackView.insertSubview(maskImageView, at: 0)
     }
 
@@ -117,7 +115,7 @@ class SongPlayer: UIView {
             
             let duration = self?.player.currentItem?.duration
             let currentDuration = ((duration ?? CMTimeMake(value: 1, timescale: 1)) - time).createString()
-            self?.allTimeLabel.text = "\(currentDuration)"
+            self?.allTimeLabel.text = "-\(currentDuration)"
             self?.updateTimeSlider()
         }
     }
@@ -141,9 +139,10 @@ class SongPlayer: UIView {
     
     func smallSongImage() {
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseInOut) {
-            let scale: CGFloat = 0.8
-            self.songImageView.transform = CGAffineTransform(scaleX: scale, y: scale)
-            self.maskImageView.transform = CGAffineTransform(scaleX: scale, y: scale)
+            let scaleMax: CGFloat = 0.8
+            let scaleMin: CGFloat = 0.7
+            self.songImageView.transform = CGAffineTransform(scaleX: scaleMax, y: scaleMax)
+            self.maskImageView.transform = CGAffineTransform(scaleX: scaleMin, y: scaleMin + 0.05)
         }
     }
     
