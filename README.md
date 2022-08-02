@@ -12,11 +12,11 @@
 
 ## LaunchScreen и Архитектура проекта
 
-<img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/IMG_8531.PNG" width="160">  <img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Снимок%20экрана%202022-08-02%20в%2020.17.56.png" width="168"">
+<img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202022-08-02%20at%2020.29.51.png" width="160">  <img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Снимок%20экрана%202022-08-02%20в%2020.17.56.png" width="168">  <img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Снимок%20экрана%202022-08-02%20в%2020.18.27.png" width="191"> 
 
 ## Главный экран
 
-Первой открывается вкладка "Search" с поиском по ключевым словам или символам/цифрам из iTunes API, рядом с ней в TabBar расположена вкладка "Playlist" со списком сохраненных из поисковика песен.
+Первой открывается вкладка "Playlist" со списком сохраненных из поисковика песен, рядом с ней в TabBar расположена вкладка "Search" с поиском по ключевым словам или символам/цифрам из iTunes API.
 
 ## Поиск
 
