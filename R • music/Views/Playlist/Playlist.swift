@@ -17,6 +17,7 @@ struct Playlist: View {
     
     init() {
         UITableView.appearance().showsVerticalScrollIndicator = false
+        UITableView.appearance().separatorStyle = .none
     }
     
     var body: some View {
@@ -64,8 +65,12 @@ struct Playlist: View {
                             self.song = song
                             self.tabBarDelegate?.maxSizeSongPlayer(viewModel: self.song)
                         }))
-                    }.onDelete(perform: deleteFromList)
+                    }
+                    .onDelete(perform: deleteFromList)
                 }
+            }
+            .onAppear {
+                UITableView.appearance().separatorColor = .clear
             }
             .navigationBarTitle("Playlist")
         }
@@ -73,6 +78,7 @@ struct Playlist: View {
     
     func deleteFromList(at offsets: IndexSet) {
         songs.remove(atOffsets: offsets)
+        
         if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: songs, requiringSecureCoding: false) {
             let defaults = UserDefaults.standard
             defaults.set(savedData, forKey: UserDefaults.addedKeySong)
@@ -85,24 +91,20 @@ struct PlaylistCell: View {
     var cell: SearchViewModel.Cell
     
     var body: some View {
-        HStack {
+        HStack(alignment: .center, spacing: 10) {
             if let url = URL(string: cell.iconUrlString ?? "") {
             URLImage(url) { image in
-                image.resizable().frame(width: 60, height: 60).cornerRadius(5)
+                image.resizable().frame(width: 65, height: 65).cornerRadius(5)
                 }
                 VStack(alignment: .leading) {
                     Text("\(cell.trackName)")
                     Text("\(cell.artistName)")
-            }
+                        .foregroundColor(.gray)
+                }
          }
       }
    }
 }
-
-
-
-
-
 
 struct Playlist_Previews: PreviewProvider {
     static var previews: some View {
