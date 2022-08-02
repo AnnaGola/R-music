@@ -25,16 +25,16 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
         
         view.backgroundColor = .white
-        tabBar.tintColor = #colorLiteral(red: 0.8425114751, green: 0.6422668695, blue: 0.550950408, alpha: 1)
+        tabBar.tintColor = #colorLiteral(red: 0.8448515534, green: 0.6441723704, blue: 0.5505579114, alpha: 1)
         tabBar.barTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         setupSongPlayer()
         searchVC.tabBarDelegate = self
         
-        let playlist = Playlist()
+        var playlist = Playlist()
+        playlist.tabBarDelegate = self
         let hostVC = UIHostingController(rootView: playlist)
         hostVC.tabBarItem.image = #imageLiteral(resourceName: "library")
         hostVC.tabBarItem.title = "Playlist"
-        
         
         viewControllers = [
             hostVC,
@@ -43,6 +43,15 @@ class TabBarController: UITabBarController {
     }
     
     func createVC(rootVC: UIViewController, image: UIImage, title: String) -> UIViewController {
+        let navVC = UINavigationController(rootViewController: rootVC)
+        navVC.tabBarItem.image = image
+        navVC.tabBarItem.title = title
+        rootVC.navigationItem.title = title
+        navVC.navigationBar.prefersLargeTitles = true
+        return navVC
+    }
+    
+    func createCVC(rootVC: UICollectionViewController, image: UIImage, title: String) -> UIViewController {
         let navVC = UINavigationController(rootViewController: rootVC)
         navVC.tabBarItem.image = image
         navVC.tabBarItem.title = title

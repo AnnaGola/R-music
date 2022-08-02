@@ -196,13 +196,13 @@ class SongPlayer: UIView {
 
         switch gesture.state {
         case .began:
-            maskImageView.alpha = 1
+            maskImageView.alpha = 0
         case .changed:
             paningChanged(gesture: gesture)
         case .ended:
             paningEnded(gesture: gesture)
         @unknown default:
-            print("default state in padding went wrong")
+            print("default state in padding")
         }
     }
     

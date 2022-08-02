@@ -15,12 +15,9 @@ extension UIViewController {
         
         if let viewController = storyboard.instantiateInitialViewController() as? T {
             return viewController
-        } else {
-            if let playlistVC = storyboard.instantiateInitialViewController() as? T {
-                return playlistVC
         }
-         fatalError("Найдены ошибки в файле \(name) storyboard")
-        }
+        fatalError("Найдены ошибки в файле \(name) storyboard")
     }
 }
+
 

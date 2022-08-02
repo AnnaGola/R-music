@@ -10,10 +10,6 @@ import SDWebImage
 
 class TrackCell: UITableViewCell {
     
-//MARK: - Identifier
-    
-    static let reuseTrackCellID = "TrackCell"
-    
 //MARK: - Outlets
     
     @IBOutlet weak var trackImageView: UIImageView!
@@ -29,10 +25,17 @@ class TrackCell: UITableViewCell {
         savingSong()
     }
     
+    
+//MARK: - Identifier
+    
+    static let reuseTrackCellID = "TrackCell"
+    
+    
 //MARK: - Properties
     
     var cell: SearchViewModel.Cell?
     let userDefaults = UserDefaults.standard
+    
     
 //MARK: - Methods
     
@@ -69,12 +72,12 @@ class TrackCell: UITableViewCell {
     
     func savingSong() {
         guard let cell = cell else { return }
-        var listOfSongs = userDefaults.savedSong()
+        var arrayOfSongs = userDefaults.savedSong()
         addButton.isHidden = true
         
-        listOfSongs.append(cell)
+        arrayOfSongs.append(cell)
         
-        if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: listOfSongs, requiringSecureCoding: false) {
+        if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: arrayOfSongs, requiringSecureCoding: false) {
             userDefaults.set(savedData, forKey: UserDefaults.addedKeySong)
         }
     }
