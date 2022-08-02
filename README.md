@@ -12,7 +12,7 @@
 
 ## LaunchScreen и Архитектура проекта
 
-<img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Simulator%20Screen%20Shot%20-%20iPhone%2011%20-%202022-07-31%20at%2021.26.45.png" width="160">  <img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Снимок%20экрана%202022-07-31%20в%2021.37.35.png" width="177.5">  <img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Снимок%20экрана%202022-07-31%20в%2021.37.00.png" width="175.1">
+<img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/IMG_8531.PNG" width="160">  <img src="https://github.com/AnnaGola/R-music/blob/main/Screenshots/Снимок%20экрана%202022-08-02%20в%2020.17.56.png" width="168"">
 
 ## Главный экран
 
