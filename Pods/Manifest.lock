@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.0.5)
+  - lottie-ios (3.4.1)
   - Reveal-SDK (37)
   - SDWebImage (5.13.2):
     - SDWebImage/Core (= 5.13.2)
@@ -7,20 +8,23 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-beta.5)
+  - lottie-ios
   - Reveal-SDK
   - SDWebImage (~> 5.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - lottie-ios
     - Reveal-SDK
     - SDWebImage
 
 SPEC CHECKSUMS:
   Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
+  lottie-ios: 016449b5d8be0c3dcbcfa0a9988469999cd04c5d
   Reveal-SDK: 3d0eaebe2c2862b39a8341920e5cab305fbc01ca
   SDWebImage: 72f86271a6f3139cc7e4a89220946489d4b9a866
 
-PODFILE CHECKSUM: a5a167894c843d55c26b7b9b987badc347c311be
+PODFILE CHECKSUM: 60415849f5cf6e1bde706708ec4d66920fdafa90
 
 COCOAPODS: 1.11.3

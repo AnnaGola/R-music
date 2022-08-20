@@ -56,8 +56,8 @@
                             </constraints>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" red="0.86412094578598486" green="0.86412094578598486" blue="0.86412094578598486" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.93725484609999998" green="0.93725484609999998" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="aD9-OM-Pxv" firstAttribute="leading" secondItem="FUY-oc-byi" secondAttribute="leading" constant="8" id="6sF-mG-X5p"/>
                         <constraint firstAttribute="height" constant="64" id="BY3-1z-dRa"/>

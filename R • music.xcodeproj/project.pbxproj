@@ -40,6 +40,7 @@
 		AF642EEF2899162900A92A2E /* URLImageStore in Frameworks */ = {isa = PBXBuildFile; productRef = AF642EEE2899162900A92A2E /* URLImageStore */; };
 		AF642F0B2899465100A92A2E /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF642F0A2899465100A92A2E /* Playlist.swift */; };
 		AF642F0D28996F7100A92A2E /* Playlist+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF642F0C28996F7000A92A2E /* Playlist+.swift */; };
+		AF642F12289A9C4700A92A2E /* twitter.json in Resources */ = {isa = PBXBuildFile; fileRef = AF642F11289A9C4700A92A2E /* twitter.json */; };
 		AFA6C043289433E300318D05 /* UIImageView + Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6C042289433E300318D05 /* UIImageView + Blur.swift */; };
 		AFA6C04D289472BE00318D05 /* SearchWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA6C04C289472BD00318D05 /* SearchWorker.swift */; };
 		AFDE0F502891932D00759ED7 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDE0F4F2891932D00759ED7 /* UIView+.swift */; };
@@ -81,6 +82,7 @@
 		AF642EE928980A6000A92A2E /* TabBar+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBar+.swift"; sourceTree = "<group>"; };
 		AF642F0A2899465100A92A2E /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
 		AF642F0C28996F7000A92A2E /* Playlist+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Playlist+.swift"; sourceTree = "<group>"; };
+		AF642F11289A9C4700A92A2E /* twitter.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = twitter.json; sourceTree = "<group>"; };
 		AFA6C042289433E300318D05 /* UIImageView + Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Blur.swift"; sourceTree = "<group>"; };
 		AFA6C04C289472BD00318D05 /* SearchWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWorker.swift; sourceTree = "<group>"; };
 		AFDE0F4F2891932D00759ED7 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 		AF1A7EC0288B131300CDA821 /* R • music */ = {
 			isa = PBXGroup;
 			children = (
+				AF642F0E289A952B00A92A2E /* AnimationLotttie */,
 				AF1A7EF8288C304D00CDA821 /* Delegate */,
 				AF1A7EFA288C416F00CDA821 /* Model */,
 				AF1A7EF0288BFED700CDA821 /* Network */,
@@ -277,6 +280,14 @@
 			path = Playlist;
 			sourceTree = "<group>";
 		};
+		AF642F0E289A952B00A92A2E /* AnimationLotttie */ = {
+			isa = PBXGroup;
+			children = (
+				AF642F11289A9C4700A92A2E /* twitter.json */,
+			);
+			path = AnimationLotttie;
+			sourceTree = "<group>";
+		};
 		C977FFE407DCDCC78901B075 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,6 +368,7 @@
 				AF1A7ECE288B131B00CDA821 /* LaunchScreen.storyboard in Resources */,
 				AF1A7ECB288B131B00CDA821 /* Assets.xcassets in Resources */,
 				AF1A7EF2288C0A2A00CDA821 /* SearchViewController.storyboard in Resources */,
+				AF642F12289A9C4700A92A2E /* twitter.json in Resources */,
 				AF1A7F12288DA49B00CDA821 /* SongPlayer.xib in Resources */,
 				AF1A7EFD288D263200CDA821 /* TrackCell.xib in Resources */,
 			);
