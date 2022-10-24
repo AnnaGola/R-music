@@ -57,7 +57,7 @@ struct Playlist: View {
                                 .map{ $0 as? UIWindowScene}
                                 .compactMap{ $0 }
                                 .first?.windows
-                                .filter({ $0.isKeyWindow }).first //stackOverFlow
+                                .filter({ $0.isKeyWindow }).first
                             
                             let tabBarVC = keyWindow?.rootViewController as? TabBarController
                             tabBarVC?.songPlayer.delegate = self

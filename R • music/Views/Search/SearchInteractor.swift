@@ -22,7 +22,7 @@ class SearchInteractor: SearchBusinessLogic {
       switch request {
       case .getTracks(let searchText):
           presenter?.presentData(response: Search.Model.Response.ResponseType.presentLoader)
-          networkService.parsJsonData(searchText: searchText) { [weak self] trackModel in
+          networkService.getData(searchText: searchText) { [weak self] trackModel in
               self?.presenter?.presentData(response: Search.Model.Response.ResponseType.presentTracks(trackModel: trackModel))
           }
       }

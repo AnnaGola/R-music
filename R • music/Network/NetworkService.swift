@@ -10,7 +10,7 @@ import Alamofire
 
 class NetworkService {
     
-    func parsJsonData(searchText: String, complition: @escaping (TrackModel?) -> Void) {
+    func getData(searchText: String, complition: @escaping (TrackModel?) -> Void) {
         
         let url = "https://itunes.apple.com/search"
         let params = ["term": "\(searchText)", "limit": "100", "media": "music"]
