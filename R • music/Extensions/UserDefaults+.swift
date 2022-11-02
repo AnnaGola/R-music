@@ -1,10 +1,3 @@
-//
-//  UserDefaults+.swift
-//  R • music
-//
-//  Created by anna on 30.07.2022.
-//
-
 import UIKit
 
 extension UserDefaults {

@@ -1,10 +1,3 @@
-//
-//  SearchVC+.swift
-//  R • music
-//
-//  Created by anna on 23.07.2022.
-//
-
 import UIKit
 
 //MARK: - Delegate/DataSource

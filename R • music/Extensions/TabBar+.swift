@@ -1,10 +1,3 @@
-//
-//  TabBar+.swift
-//  R • music
-//
-//  Created by anna on 01.08.2022.
-//
-
 import UIKit
 
 extension TabBarController: TabBarControllerDelegate {

@@ -1,13 +1,5 @@
-//
-//  CMTime+.swift
-//  R • music
-//
-//  Created by anna on 25.07.2022.
-//
-
 import UIKit
 import CoreMedia
-import AVKit
 
 extension CMTime {
     func createString() -> String {

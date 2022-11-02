@@ -1,10 +1,3 @@
-//
-//  UIView extension.swift
-//  R • music
-//
-//  Created by anna on 27.07.2022.
-//
-
 import UIKit
 
 extension UIView {

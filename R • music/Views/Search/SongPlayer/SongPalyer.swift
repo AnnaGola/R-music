@@ -1,10 +1,3 @@
-//
-//  SongPalyer.swift
-//  R • music
-//
-//  Created by anna on 24.07.2022.
-//
-
 import UIKit
 import SDWebImage
 import AVKit
@@ -200,7 +193,7 @@ class SongPlayer: UIView {
             paningChanged(gesture: gesture)
         case .ended:
             paningEnded(gesture: gesture)
-        @unknown default:
+        default:
             print("default state in padding")
         }
     }
@@ -234,7 +227,6 @@ class SongPlayer: UIView {
         case .changed:
             let translation = gesture.translation(in: self.superview)
             maxStackView.transform = CGAffineTransform(translationX: 0, y: translation.y)
-
         case .ended:
             let translation = gesture.translation(in: self.superview)
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseInOut) {
@@ -244,8 +236,7 @@ class SongPlayer: UIView {
                     self.tabBarDelegate?.minSizeSongPlayer()
                 }
             }
-            
-        @unknown default:
+        default:
             let translation = gesture.translation(in: self.superview)
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseInOut) {
                 self.maxStackView.transform = .identity

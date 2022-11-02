@@ -1,10 +1,3 @@
-//
-//  TrackCell.swift
-//  R • music
-//
-//  Created by anna on 24.07.2022.
-//
-
 import UIKit
 import SDWebImage
 

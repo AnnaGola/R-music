@@ -1,10 +1,3 @@
-//
-//  Playlist.swift
-//  R • music
-//
-//  Created by anna on 02.08.2022.
-//
-
 import SwiftUI
 import URLImage
 
