@@ -156,14 +156,15 @@ class SongPlayer: UIView {
         playOrPauseButton.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
         miniPlayOrPauseButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
         
-        let string600 = viewModel.iconUrlString?.replacingOccurrences(of: "100x100", with: "600x600")
-        guard let url = URL(string: string600 ?? "") else { return }
-        miniImageOfTheSong.sd_setImage(with: url)
-        songImageView.sd_setImage(with: url)
+        guard let string600 = viewModel.iconUrlString?.replacingOccurrences(of: "100x100", with: "600x600"),
+              let mainViewURL = URL(string: string600),
+              let string8 = viewModel.iconUrlString?.replacingOccurrences(of: "100x100", with: "8x8"),
+              let backgroundURL = URL(string: string8)
+        else { return }
         
-        let string8 = viewModel.iconUrlString?.replacingOccurrences(of: "100x100", with: "8x8")
-        guard let url = URL(string: string8 ?? "") else { return }
-        backgroundImageView.sd_setImage(with: url)
+        miniImageOfTheSong.sd_setImage(with: mainViewURL)
+        songImageView.sd_setImage(with: mainViewURL)
+        backgroundImageView.sd_setImage(with: backgroundURL)
     }
     
     
