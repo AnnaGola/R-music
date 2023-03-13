@@ -11,7 +11,6 @@ class TabBarController: UITabBarController {
     var maxTopAnchor: NSLayoutConstraint!
     var bottomAnchor: NSLayoutConstraint!
     
-    
 //MARK: - Methods
     
     override func viewDidLoad() {
@@ -19,7 +18,7 @@ class TabBarController: UITabBarController {
         
         view.backgroundColor = .white
         tabBar.tintColor = #colorLiteral(red: 0.8448515534, green: 0.6441723704, blue: 0.5505579114, alpha: 1)
-        tabBar.barTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        tabBar.barTintColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         setupSongPlayer()
         searchVC.tabBarDelegate = self
         
@@ -29,10 +28,8 @@ class TabBarController: UITabBarController {
         hostVC.tabBarItem.image = #imageLiteral(resourceName: "library")
         hostVC.tabBarItem.title = "Playlist"
         
-        viewControllers = [
-            hostVC,
-            createVC(rootVC: searchVC, image: #imageLiteral(resourceName: "search") , title: "Search")
-        ]
+        viewControllers = [hostVC,
+                           createVC(rootVC: searchVC, image: #imageLiteral(resourceName: "search") , title: "Search")]
     }
     
     func createVC(rootVC: UIViewController, image: UIImage, title: String) -> UIViewController {
@@ -54,7 +51,6 @@ class TabBarController: UITabBarController {
     }
     
     func setupSongPlayer() {
-        
         songPlayer.translatesAutoresizingMaskIntoConstraints = false
         songPlayer.tabBarDelegate = self
         songPlayer.delegate = searchVC

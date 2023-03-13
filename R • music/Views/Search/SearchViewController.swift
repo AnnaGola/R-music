@@ -1,22 +1,26 @@
 import UIKit
 
-class SearchViewController: UIViewController, SearchDisplayLogic {
-  
-//MARK: - Properties
+protocol SearchDisplayLogic {
+    func displayData(viewModel: Search.Model.ViewModel.ViewModelData)
+}
+
+class SearchViewController: UIViewController {
+    
+    //MARK: - Properties
     
     var interactor: SearchBusinessLogic?
-    var router: (NSObjectProtocol & SearchRoutingLogic)?
+    var router: (SearchRoutingLogic)?
     let searchController = UISearchController(searchResultsController: nil)
     var searchViewModel = SearchViewModel.init(cells: [])
     var timer: Timer?
     lazy var loader = Loader()
-    weak var tabBarDelegate: TabBarControllerDelegate?
+    var tabBarDelegate: TabBarControllerDelegate?
     
-//MARK: - Outlets
+    //MARK: - Outlets
     
     @IBOutlet weak var table: UITableView!
-
-//MARK: - Methods
+    
+    //MARK: - Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +45,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
         
     }
     
-//MARK: - Setup
+    //MARK: - Setup
     
     private func setup() {
         let viewController = self
@@ -65,15 +69,14 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     private func setupTableView() {
         table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
-        let nib = UINib(nibName: "TrackCell", bundle: nil)
+        let nib = UINib(nibName: String(describing: TrackCell.self), bundle: nil)
         table.register(nib, forCellReuseIdentifier: TrackCell.reuseTrackCellID)
         table.tableFooterView = loader
     }
-    
-//MARK: - Routing
+}
 
+extension SearchViewController: SearchDisplayLogic {
     func displayData(viewModel: Search.Model.ViewModel.ViewModelData) {
-        
         switch viewModel {
         case .displayTracks(let searchViewModel):
             self.searchViewModel = searchViewModel

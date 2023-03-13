@@ -8,7 +8,5 @@ target 'R • music' do
 pod 'Alamofire', '~> 5.0.0-beta.5'
 pod 'SDWebImage', '~> 5.0'
 pod 'Reveal-SDK', :configurations => ['Debug']
-pod 'lottie-ios'
-
 
 end

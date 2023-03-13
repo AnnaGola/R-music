@@ -3,42 +3,32 @@ import SDWebImage
 
 class TrackCell: UITableViewCell {
     
-//MARK: - Outlets
+    static let reuseTrackCellID = String(describing: TrackCell.self)
     
+    //MARK: - Properties
+        
     @IBOutlet weak var trackImageView: UIImageView!
     @IBOutlet weak var songNameLabel: UILabel!
     @IBOutlet weak var artistNameLabel: UILabel!
     @IBOutlet weak var albumNameLabel: UILabel!
     @IBOutlet weak var addButton: UIButton!
-
-   
-//MARK: - Actions
     
+    var cell: SearchViewModel.Cell?
+    let userDefaults = UserDefaults.standard
+
     @IBAction func addSongTapped(_ sender: UIButton) {
         savingSong()
     }
     
-    
-//MARK: - Identifier
-    
-    static let reuseTrackCellID = "TrackCell"
-    
-    
-//MARK: - Properties
-    
-    var cell: SearchViewModel.Cell?
-    let userDefaults = UserDefaults.standard
-    
-    
-//MARK: - Methods
+    //MARK: - Methods
     
     override class func awakeFromNib() {
-           super.awakeFromNib()
+        super.awakeFromNib()
     }
     
     override func prepareForReuse() {
-           super.prepareForReuse()
-           trackImageView.image = nil
+        super.prepareForReuse()
+        trackImageView.image = nil
     }
     
     func setCell(viewModel: SearchViewModel.Cell) {

@@ -3,8 +3,17 @@ import SDWebImage
 import AVKit
 
 class SongPlayer: UIView {
-
-//MARK: - Outlets
+    
+    //MARK: - Properties
+    
+    let player: AVPlayer = {
+        let avPlayer = AVPlayer()
+        avPlayer.automaticallyWaitsToMinimizeStalling = false
+        return avPlayer
+    }()
+    
+    var delegate: PlayAnotherSong?
+    var tabBarDelegate: TabBarControllerDelegate?
     
     @IBOutlet weak var maskImageView: UIImageView!
     @IBOutlet weak var backgroundImageView: UIImageView!
@@ -21,34 +30,33 @@ class SongPlayer: UIView {
     @IBOutlet weak var artistNameLabel: UILabel!
     @IBOutlet weak var volumeSlider: UISlider!
     @IBOutlet weak var playOrPauseButton: UIButton!
-
     
-//MARK: - Actions
-
+    //MARK: - Methods
+    
     @IBAction func dragDownSwipe(_ sender: UIButton) {
         self.tabBarDelegate?.minSizeSongPlayer()
     }
-
+    
     @IBAction func leftScrollPressed(_ sender: UIButton) {
         let cellViewModel = delegate?.playPrevSong()
         guard let cellSong = cellViewModel else { return }
         self.setPlayer(viewModel: cellSong)
     }
-
+    
     @IBAction func playOrPausePressed(_ sender: UIButton) {
         playOrPauseState()
     }
-
+    
     @IBAction func rightScrollPressed(_ sender: UIButton) {
         let cellViewModel = delegate?.playNextSong()
         guard let cellSong = cellViewModel else { return }
         self.setPlayer(viewModel: cellSong)
     }
-
+    
     @IBAction func volumeSliderChanged(_ sender: UISlider) {
         player.volume = volumeSlider.value
     }
-
+    
     @IBAction func songTimeSliderChanged(_ sender: UISlider) {
         let percentage = songPlayerSlider.value
         guard let duration = player.currentItem?.duration else { return }
@@ -57,21 +65,6 @@ class SongPlayer: UIView {
         let seekTime = CMTimeMakeWithSeconds(timeInSecs, preferredTimescale: 1)
         player.seek(to: seekTime)
     }
-    
-    
-//MARK: - Properties
-    
-    let player: AVPlayer = {
-        let avPlayer = AVPlayer()
-        avPlayer.automaticallyWaitsToMinimizeStalling = false
-        return avPlayer
-    }()
-
-    var delegate: PlayAnotherSong?
-    weak var tabBarDelegate: TabBarControllerDelegate?
-    
-
-//MARK: - Methods
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -84,7 +77,6 @@ class SongPlayer: UIView {
         songImageView.addRadius(cornerRadius: 10)
         maxStackView.insertSubview(maskImageView, at: 0)
     }
-
     
     func playSong(previewUrl: String?) {
         guard let url = URL(string: previewUrl ?? "") else { return }
@@ -119,9 +111,8 @@ class SongPlayer: UIView {
         let percentage = currentTime / duration
         self.songPlayerSlider.value = Float(percentage)
     }
-
     
-//MARK: - Animation
+    //MARK: - Animation
     
     func bigSongIamge() {
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1, options: .curveEaseInOut) {
@@ -153,7 +144,7 @@ class SongPlayer: UIView {
         }
     }
     
-//MARK: - Setup Player
+    //MARK: - Setup Player
     
     func setPlayer(viewModel: SearchViewModel.Cell) {
         miniNameOfTheSong.text = viewModel.trackName
@@ -176,7 +167,7 @@ class SongPlayer: UIView {
     }
     
     
-//MARK: - Setup Gestures
+    //MARK: - Setup Gestures
     
     func setupGestures() {
         miniSongPlayer.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(resizing)))
@@ -247,7 +238,7 @@ class SongPlayer: UIView {
         }
     }
     
-     @objc func resizing() {
-         self.tabBarDelegate?.maxSizeSongPlayer(viewModel: nil)
+    @objc func resizing() {
+        self.tabBarDelegate?.maxSizeSongPlayer(viewModel: nil)
     }
 }

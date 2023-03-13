@@ -1,24 +1,24 @@
 import UIKit
 
 class SearchPresenter: SearchPresentationLogic {
-  var viewController: SearchDisplayLogic?
-  
-  func presentData(response: Search.Model.Response.ResponseType) {
-      
-      switch response {
-          
-      case .presentTracks(let trackModel):
-          
-          let cells = trackModel?.results.map({ track in
-              cellViewModel(from: track)
-          }) ?? []
-          
-          let searchViewModel = SearchViewModel.init(cells: cells)
-          viewController?.displayData(viewModel: Search.Model.ViewModel.ViewModelData.displayTracks(searchViewModel: searchViewModel))
-      case .presentLoader:
-          viewController?.displayData(viewModel: Search.Model.ViewModel.ViewModelData.displayLoader)
-      }
-  }
+    var viewController: SearchDisplayLogic?
+    
+    func presentData(response: Search.Model.Response.ResponseType) {
+        
+        switch response {
+        case .presentTracks(let trackModel):
+            
+            let cells = trackModel?.results.map({ track in
+                cellViewModel(from: track)
+            }) ?? []
+            
+            let searchViewModel = SearchViewModel.init(cells: cells)
+            viewController?.displayData(viewModel: Search.Model.ViewModel.ViewModelData.displayTracks(searchViewModel: searchViewModel))
+            
+        case .presentLoader:
+            viewController?.displayData(viewModel: Search.Model.ViewModel.ViewModelData.displayLoader)
+        }
+    }
     
     private func cellViewModel(from track: Track) -> SearchViewModel.Cell {
         

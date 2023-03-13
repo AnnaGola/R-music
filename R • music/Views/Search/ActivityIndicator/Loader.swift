@@ -2,7 +2,7 @@ import UIKit
 
 class Loader: UIView {
     
-//MARK: - Init
+    //MARK: - Init
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -12,8 +12,8 @@ class Loader: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-//MARK: - Creating indicator
+    
+    //MARK: - Creating indicator
     
     private var loading: UILabel = {
         let loading = UILabel()
@@ -31,8 +31,8 @@ class Loader: UIView {
         activityIndicator.color = #colorLiteral(red: 0.7450386882, green: 0.567944169, blue: 0.4872100949, alpha: 1)
         return activityIndicator
     }()
-
-//MARK: - Constraints
+    
+    //MARK: - Constraints
     
     private func setupConstraints() {
         addSubview(activityIndicator)

@@ -1,10 +1,10 @@
 import UIKit
 
 protocol SearchRoutingLogic {
-
+    
 }
 
-class SearchRouter: NSObject, SearchRoutingLogic {
-
-  weak var viewController: SearchViewController?
+class SearchRouter: SearchRoutingLogic {
+    
+    weak var viewController: SearchViewController?
 }
